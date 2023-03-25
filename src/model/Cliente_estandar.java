@@ -7,4 +7,5 @@ public class Cliente_estandar extends Cliente {
     }
 
     // Aqui van los constructores y las caracteristicas de cliente estandar
+
 }
