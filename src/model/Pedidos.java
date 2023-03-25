@@ -81,11 +81,4 @@ public class Pedidos {
                 '}';
     }
 
-
-    public Pedidos Eliminar_Pedido(){
-
-        //En este apartado debería eliminar los datos de ListadePedidos tras comprobar las fechas de envio y preparacion de artículo
-        //Puede que esta función tenga que estar en el controlador
-    }
-
 }
