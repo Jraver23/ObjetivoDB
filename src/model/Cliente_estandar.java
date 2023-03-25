@@ -5,5 +5,5 @@ public class Cliente_estandar extends Cliente {
         super(nombre, domicilio, nif, email);
     }
 
-    // Aqui van los constructores
+    // Aqui van los constructores y las caracteristicas de cliente estandar
 }
