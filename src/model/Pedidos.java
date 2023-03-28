@@ -81,4 +81,14 @@ public class Pedidos {
                 '}';
     }
 
+    public boolean pedidoEnviado(){
+        if(getFecha()-articulo.tiempoenvio > 0) return true;
+        else return false;
+    }
+
+    public float precioEnvio(){
+        float precio = numero_pedido*articulo.precio;
+        return precio;
+    }
+
 }
