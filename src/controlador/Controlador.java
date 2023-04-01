@@ -16,26 +16,48 @@ public class Controlador {
 
     // métodos de acceso y manipulación de los datos del modelo
 
-    public void agregarDato(Dato nuevoDato) {
-        datos.agregarDato(nuevoDato);
+    public List<Articulo> getListaArticulos() {
+        return datos.getArticulos();
     }
 
-    public void eliminarDato(Dato datoAEliminar) {
-        datos.eliminarDato(datoAEliminar);
+    public void addArticuloToList (Articulo articulo) {
+        datos.getListaArticulos().addArticulo(articulo);
     }
 
-    // métodos específicos para subclases de Datos
-
-    public Articulo pedirDatosArticulo(int idArticulo) {
-        return datos.obtenerArticulo(idArticulo);
+    public List<Cliente> getListaClientes() {
+        return datos.getClientes();
     }
 
-    public Pedido pedirDatosPedido(int idPedido) {
-        return datos.obtenerPedido(idPedido);
+    public List<Cliente> getListaClientesPremium() {
+        return datos.getClientesPremium();
     }
 
-    public Cliente pedirDatosCliente(int idCliente) {
-        return datos.obtenerCliente(idCliente);
+    public List<Cliente> getListaClientesStandard() {
+        return datos.getClientesStandard();
+    }
+
+    public void addClienteToList (Cliente cliente) {
+        datos.getListaClientes().addCliente(cliente);
+    }
+
+    public List<Pedidos> getListaPedidosPendientes() {
+        return datos.getPedidosPendientes();
+    }
+
+    public List<Pedidos> getListaPedidosEnviados() {
+        return datos.getPedidosEnviados();
+    }
+
+    public List<Pedidos> getListaPedidosPendientesPorCliente(String email) {
+        return datos.getPedidosPendientes(email);
+    }
+
+    public List<Pedidos> getListaPedidosEnviadosPorCliente(String email) {
+        return datos.getPedidosEnviados(email);
+    }
+
+    public deletePedidoFromLista (String numPedido) {
+        datos.deletePedido(numPedido);
     }
 
 }
