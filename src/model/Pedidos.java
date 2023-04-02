@@ -81,4 +81,23 @@ public class Pedidos {
                 '}';
     }
 
+    public boolean pedidoEnviado(){
+        Date fechaPedido = getFecha();
+        Time tiempoPreparacion = articulo.getTiempo_de_preparacion();
+        Date fechaEnvio = new Date(fechaPedido.getTime() + tiempoPreparacion.getTime());
+
+        Date fechaActual = new Date();
+        if (fechaActual.compareTo(fechaEnvio) > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public float precioEnvio(){
+        return numero_pedido*articulo.getPrecio_de_venta();
+
+    }
+
 }

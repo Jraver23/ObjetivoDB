@@ -6,6 +6,24 @@ public class ClientePremium extends Cliente {
         super(nombre, domicilio, nif, email);
     }
 
+<<<<<<< HEAD
     // Aqui van los constructores y las caracteristicas de cliente premium con sus ecuaciones
 
 }
+=======
+    public String tipoCliente(){
+        return "ClientePremium";
+
+    }
+
+    public float calcAnual(){
+        return 30*12;
+
+    }
+
+    public float descuentoEnv(){
+        return (float) 0.2;
+    }
+
+}
+>>>>>>> sergi_modelo

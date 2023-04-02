@@ -1,6 +1,10 @@
 package model;
 
+<<<<<<< HEAD
 public class Cliente {
+=======
+public abstract class Cliente {
+>>>>>>> sergi_modelo
     private String nombre;
     private String domicilio;
     private String nif;
@@ -44,4 +48,24 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
+<<<<<<< HEAD
 }
+=======
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nombre='" + nombre + '\'' +
+                ", domicilio='" + domicilio + '\'' +
+                ", nif='" + nif + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+    public abstract String tipoCliente();
+
+    public abstract float calcAnual();
+
+    public abstract float descuentoEnv();
+}
+>>>>>>> sergi_modelo
