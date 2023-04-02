@@ -4,11 +4,11 @@ import java.sql.Time;
 import java.util.Date;
 import java.util.Scanner;
 
-public class ListaClientes extends Lista<ClienteEstandar> {
+public class ListaClientes extends Lista<Cliente> {
 
     ListaClientes listaClientes = new ListaClientes();
 
-    public boolean Añadir_cliente(ClienteEstandar c){
+    public boolean Añadir_cliente(Cliente c){
 
         int size = listaClientes.getSize();
         int posicion = -1;
