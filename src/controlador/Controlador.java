@@ -2,13 +2,16 @@ package controlador;
 
 import model.*;
 
+import java.sql.Time;
+import java.util.Date;
+
 
 public class Controlador {
 
     private Datos datos; // instancia de la clase Datos
-    private StoreView view;
+    private view.GestionOS view;
 
-    public Controlador(Datos datos, StoreView view) {
+    public Controlador() {
         this.datos = datos;
         this.view = view;
     }
@@ -19,11 +22,11 @@ public class Controlador {
         return datos.listaA();
     }
 
-    public void addArticuloToList (String codigo, String descripcion, float precio, float gastos, long tiempo) {
+    public void addArticuloToList (String codigo, String descripcion, float precio, float gastos, Time tiempo) {
         datos.addArticulo(codigo, descripcion, precio, gastos, tiempo);
     }
 
-    public String getListaClientes() {
+    public ListaClientes getListaClientes() {
         return datos.listaC();
     }
 
@@ -35,16 +38,25 @@ public class Controlador {
         return datos.ListaClientesEstandar();
     }
 
-    public void addClienteToList (String nombre, String domicilio, String nif, String email, String tipoCliente) {
-        datos.addCliente(nombre, domicilio, nif, email, tipoCliente);
+    public void addCliente (String nombre, String domicilio, String nif, String email) {
+        datos.addCliente(nombre, domicilio, nif, email);
     }
 
-    public String getListaPedidos() {
+    public void addClienteToAList (String nombre, String domicilio, String nif, String email, String tipoCliente) {
+        datos.addClienteToAList(nombre, domicilio, nif, email, tipoCliente);
+    }
+
+    public ListaPedidos getListaPedidos() {
         return datos.listaPedidos();
     }
+
+
 
     public void deletePedidoFromLista (int numPedido) {
         datos.deletePedido(numPedido);
     }
 
+    public void addPedido(int numero_pedido, String cliente, String articulo, int numero_de_articulos, Date fecha, Time hora) {
+        datos.addPedido(numero_pedido, cliente, articulo, numero_de_articulos, fecha, hora);
+    }
 }

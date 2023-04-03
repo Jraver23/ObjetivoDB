@@ -1,5 +1,7 @@
 package model;
 
+import java.sql.Time;
+import java.util.Date;
 import java.util.stream.Collectors;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -63,7 +65,13 @@ public class Datos {
         return false;
     }
 
-    public void addCliente(String nombre, String domicilio, String nif, String email, String tipoCliente){
+    public void addCliente(String nombre, String domicilio, String nif, String email) {
+        Cliente cliente;
+        cliente = new Cliente(nombre, domicilio, nif, email);
+        listaClientes.add(cliente);
+    }
+
+    public void addClienteToAList(String nombre, String domicilio, String nif, String email, String tipoCliente){
         Cliente cliente;
         if (tipoCliente == "ClienteEstandar"){
             cliente = new ClienteEstandar(nombre, domicilio, nif, email);
@@ -94,8 +102,8 @@ public class Datos {
     System.out.println("Los datos han sido cargados correctamente");
     }
 
-    public String listaC(){
-        return this.listaClientes.toString();
+    public ListaClientes listaC(){
+        return this.listaClientes;
     }
 
     public String ListaClientesEstandar(){
@@ -108,8 +116,8 @@ public class Datos {
         return listaClientes.toString();
     }
 
-    public String listaPedidos(){
-        return this.listaPedidos.toString();
+    public ListaPedidos listaPedidos(){
+        return this.listaPedidos;
     }
 
     public void deletePedido (int numPedido){
@@ -121,7 +129,12 @@ public class Datos {
         }
         listaPedidos.Eliminar_pedido(pedido);
         }
+
+    public void addPedido(int numero_pedido, String cliente, String articulo, int numero_de_articulos, Date fecha, Time hora) {
+        Pedidos pedido;
+        pedido = new Pedidos(numero_pedido, cliente, articulo, numero_de_articulos, fecha, hora);
     }
+}
 
 
 

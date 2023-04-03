@@ -86,7 +86,7 @@ public class GestionOS {
                                         nif = teclado.nextLine();
                                         System.out.print("Escriba el mail del cliente (no debe existir en la BD):\n");
                                         email = teclado.nextLine();
-                                        controlador.addClienteToList(nombre,domicilio,nif,email);
+                                        controlador.addCliente(nombre,domicilio,nif,email);
                                         break;
                                     case '2':
                                         controlador.getListaClientes();
@@ -127,13 +127,14 @@ public class GestionOS {
                                         //Esto no es mio, es del controlador
                                         boolean existe = false;
                                         for(int i = 0; i < controlador.getListaClientes().getSize();++i){
-                                            if(controlador.getListaClientes().getAt(i).email == cliente) existe = true;
+                                            if(controlador.getListaClientes().getAt(i).getEmail() == cliente) existe = true;
                                         }
                                         if(!existe) {
                                             String nombre;
                                             String domicilio;
                                             String nif;
                                             String email;
+                                            String tipoCliente;
 
                                             Scanner teclado = new Scanner(System.in);
                                             System.out.print("Creando nuevo Cliente...\n");
@@ -145,7 +146,9 @@ public class GestionOS {
                                             nif = teclado.nextLine();
                                             System.out.print("Escriba el mail del cliente (no debe existir en la BD):\n");
                                             email = teclado.nextLine();
-                                            controlador.addClienteToList(nombre,domicilio,nif,email);
+                                            System.out.print("Escriba el tipo de cliente. Puede ser ClienteEstandar o ClientePremium:\n");
+                                            tipoCliente = teclado.nextLine();
+                                            controlador.addClienteToAList(nombre,domicilio,nif,email, tipoCliente);
                                         }
 
                                         System.out.print("Escriba el codigo alfanumerico del articulo:\n");
@@ -163,7 +166,7 @@ public class GestionOS {
                                         System.out.print("Eliminando Pedido...\n");
                                         System.out.print("Escriba el numero de pedido para verificar que no se ha enviado\n");
                                         numero_pedido = Integer.parseInt(teclado.nextLine());
-                                        controlador.EliminarPedido;
+                                        controlador.deletePedidoFromLista(numero_pedido);
 
                                         break;
                                     case '3':
