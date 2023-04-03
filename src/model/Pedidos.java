@@ -12,7 +12,7 @@ public class Pedidos {
     Date fecha;
     Time hora;
 
-    public Pedidos(int numero_pedido, Cliente cliente, Articulo articulo, int numero_de_articulos, Date fecha, Time hora) {
+    public Pedidos(int numero_pedido, Cliente cliente, Articulo articulo, int numero_de_articulos, String fecha, String hora) {
         this.numero_pedido = numero_pedido;
         this.cliente = cliente;
         this.articulo = articulo;
