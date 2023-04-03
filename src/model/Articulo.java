@@ -11,7 +11,7 @@ public class Articulo {
     Time tiempo_de_preparacion;
 
     // Constructor
-    public Articulo(String codigo, String descripcionA, float precio, float gastos, Time tiempo) {
+    public Articulo(String codigo, String descripcionA, float precio, float gastos, long tiempo) {
         this.codigoalfanumerico = codigo;
         this.descripcionA = descripcionA;
         this.precio_de_venta = precio;
