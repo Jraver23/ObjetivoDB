@@ -5,15 +5,15 @@ import java.sql.Time;
 public class Articulo {
 
     String codigoalfanumerico;
-    String descripcion;
+    String descripcionA;
     float precio_de_venta;
     float gastos_de_envio;
     Time tiempo_de_preparacion;
 
     // Constructor
-    public Articulo(String codigo, String descripcion, float precio, float gastos, Time tiempo) {
+    public Articulo(String codigo, String descripcionA, float precio, float gastos, Time tiempo) {
         this.codigoalfanumerico = codigo;
-        this.descripcion = descripcion;
+        this.descripcionA = descripcionA;
         this.precio_de_venta = precio;
         this.gastos_de_envio = gastos;
         this.tiempo_de_preparacion = tiempo;
@@ -25,7 +25,7 @@ public class Articulo {
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return descripcionA;
     }
 
     public float getPrecio_de_venta() {
@@ -46,7 +46,7 @@ public class Articulo {
     }
 
     public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+        this.descripcionA = descripcion;
     }
 
     public void setPrecio_de_venta(float precio) {
@@ -64,7 +64,7 @@ public class Articulo {
     // Método toString()
     @Override
     public String toString() {
-        return "Articulo [codigoalfanumerico=" + codigoalfanumerico + ", descripcion=" + descripcion
+        return "Articulo [codigoalfanumerico=" + codigoalfanumerico + ", descripcion=" + descripcionA
                 + ", precio_de_venta=" + precio_de_venta + ", gastos_de_envio=" + gastos_de_envio
                 + ", tiempo_de_preparacion=" + tiempo_de_preparacion + "]";
     }

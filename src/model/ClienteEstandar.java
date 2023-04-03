@@ -6,11 +6,9 @@ public class ClienteEstandar extends Cliente {
         super(nombre, domicilio, nif, email);
     }
 
-<<<<<<< HEAD
     // Aqui van los constructores y las caracteristicas de cliente estandar
 
-}
-=======
+
     public String tipoCliente(){
         return "ClienteEstandar";
 
@@ -26,4 +24,3 @@ public class ClienteEstandar extends Cliente {
     }
 
 }
->>>>>>> sergi_modelo

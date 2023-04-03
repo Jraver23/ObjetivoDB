@@ -1,10 +1,7 @@
 package model;
 
-<<<<<<< HEAD
-public class Cliente {
-=======
 public abstract class Cliente {
->>>>>>> sergi_modelo
+
     private String nombre;
     private String domicilio;
     private String nif;
@@ -48,9 +45,6 @@ public abstract class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
-<<<<<<< HEAD
-}
-=======
 
     @Override
     public String toString() {
@@ -68,4 +62,4 @@ public abstract class Cliente {
 
     public abstract float descuentoEnv();
 }
->>>>>>> sergi_modelo
+
