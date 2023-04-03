@@ -1,6 +1,5 @@
 package controlador;
 
-import view.*;
 import model.*;
 
 
@@ -16,47 +15,35 @@ public class Controlador {
 
     // métodos de acceso y manipulación de los datos del modelo
 
-    public List<Articulo> getListaArticulos() {
-        return datos.getArticulos();
+    public String getListaArticulos() {
+        return datos.listaA();
     }
 
-    public void addArticuloToList (Articulo articulo) {
-        datos.getListaArticulos().addArticulo(articulo);
+    public void addArticuloToList (String codigo, String descripcion, float precio, float gastos, long tiempo) {
+        datos.addArticulo(codigo, descripcion, precio, gastos, tiempo);
     }
 
-    public List<Cliente> getListaClientes() {
-        return datos.getClientes();
+    public String getListaClientes() {
+        return datos.listaC();
     }
 
-    public List<Cliente> getListaClientesPremium() {
-        return datos.getClientesPremium();
+    public String getListaClientesPremium() {
+        return datos.ListasClientesP();
     }
 
-    public List<Cliente> getListaClientesStandard() {
-        return datos.getClientesStandard();
+    public String getListaClientesStandard() {
+        return datos.ListaClientesEstandar();
     }
 
-    public void addClienteToList (Cliente cliente) {
-        datos.getListaClientes().addCliente(cliente);
+    public void addClienteToList (String nombre, String domicilio, String nif, String email, String tipoCliente) {
+        datos.addCliente(nombre, domicilio, nif, email, tipoCliente);
     }
 
-    public List<Pedidos> getListaPedidosPendientes() {
-        return datos.getPedidosPendientes();
+    public String getListaPedidos() {
+        return datos.listaPedidos();
     }
 
-    public List<Pedidos> getListaPedidosEnviados() {
-        return datos.getPedidosEnviados();
-    }
-
-    public List<Pedidos> getListaPedidosPendientesPorCliente(String email) {
-        return datos.getPedidosPendientes(email);
-    }
-
-    public List<Pedidos> getListaPedidosEnviadosPorCliente(String email) {
-        return datos.getPedidosEnviados(email);
-    }
-
-    public deletePedidoFromLista (String numPedido) {
+    public void deletePedidoFromLista (int numPedido) {
         datos.deletePedido(numPedido);
     }
 

@@ -27,7 +27,7 @@ public class Datos {
     //El ciclo 'for' itera sobre todos los elementos, al conseguir el codigo del articulo lo compara con el parametro proporcionado
     //Recorre la lista si no encuentra comparacion el articulo no existe
         for(int i =0; i<listaArticulos.getSize(); i++){
-            int resultado= listaArticulos.getAt(i).getCodigo().compareTo(codigoA);
+            int resultado= listaArticulos.getAt(i).getCodigoalfanumerico().compareTo(codigoA);
             if (resultado==0){
                 return true;
             }
@@ -63,6 +63,15 @@ public class Datos {
         return false;
     }
 
+    public void addCliente(String nombre, String domicilio, String nif, String email, String tipoCliente){
+        Cliente cliente;
+        if (tipoCliente == "ClienteEstandar"){
+            cliente = new ClienteEstandar(nombre, domicilio, nif, email);
+        } else {
+            cliente = new ClientePremium(nombre, domicilio, nif, email);
+        }
+        listaClientes.add(cliente);
+    }
     public void cargaDatos(){
     ClienteEstandar cliente1=new ClienteEstandar("Nordine","BarcelonaCity","3625147Z","nordine@uoc.com");
     listaClientes.add(cliente1);
@@ -70,8 +79,12 @@ public class Datos {
     listaClientes.add(cliente2);
     ClientePremium cliente3=new ClientePremium("Jorge","SagradaFamilia","31025214Z","Jorge@uoc.com");
     listaClientes.add(cliente2);
-    Articulo articulo1=new Articulo(001,"Escritorio",160,20,"1");
+    Articulo articulo1=new Articulo("001","Escritorio",160,20,"1");
     listaArticulos.add(articulo1);
+    Articulo articulo2=new Articulo(002,"Mesa",140,10,"5");
+    listaArticulos.add(articulo2);
+    Articulo articulo3=new Articulo(003,"Silla",100,5,"2");
+    listaArticulos.add(articulo3);
     Pedidos pedidos1=new Pedidos(1, cliente1,articulo1,2,"2023,10,10","09:00");
     Pedidos pedidos2=new Pedidos(2,cliente2,articulo2,2,"2023,05,23","10:00");
     Pedidos pedidos3=new Pedidos(3,cliente3,articulo3,1,"2023,06;02","12:00");
@@ -94,7 +107,22 @@ public class Datos {
         Collection<Cliente>ListasClientesP=listaClientes.getArrayList().stream().filter(cliente -> cliente.tipoCliente().equals("Premium")).collect(Collectors.toCollection(ArrayList::new));
         return listaClientes.toString();
     }
-}
+
+    public String listaPedidos(){
+        return this.listaPedidos.toString();
+    }
+
+    public void deletePedido (int numPedido){
+        Pedidos pedido;
+        for (int i = 0; i < listaPedidos.getSize(); ++i) {
+            if (listaPedidos.getAt(i).numero_pedido == numPedido) {
+                pedido = listaPedidos(i);
+            }
+        }
+        listaPedidos.Eliminar_pedido(pedido);
+        }
+    }
+
 
 
 
