@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e63e672-43b5-498d-8450-29d3836f566d" name="Changes" comment="">
+    <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Datos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Datos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Vista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Lista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Pedidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pedidos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/StudentView.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +53,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0e63e672-43b5-498d-8450-29d3836f566d" name="Changes" comment="" />
+      <changelist id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="" />
       <created>1679656009798</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

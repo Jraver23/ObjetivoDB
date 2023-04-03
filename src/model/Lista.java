@@ -29,4 +29,7 @@ public class Lista<T> {
         ArrayList<T> arrlist = new ArrayList<>(lista);
         return arrlist;
     }
+
+    public void delete(Pedidos at) {
+    }
 }

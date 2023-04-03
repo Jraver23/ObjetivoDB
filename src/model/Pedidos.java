@@ -100,4 +100,6 @@ public class Pedidos {
 
     }
 
+    public Object getNumero() {
+    }
 }
