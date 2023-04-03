@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/ListaClientesEstandar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/ListaClientesPremium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ListaClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ListaClientes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlador/Controlador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/Vista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
