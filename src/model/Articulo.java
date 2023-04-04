@@ -1,18 +1,18 @@
 package model;
 
-import java.sql.Time;
+import java.time.LocalDateTime;
 
 public class Articulo {
 
-    String codigoalfanumerico;
+    String codigoA;
     String descripcionA;
     float precio_de_venta;
     float gastos_de_envio;
-    Time tiempo_de_preparacion;
+    LocalDateTime tiempo_de_preparacion;
 
     // Constructor
-    public Articulo(String codigo, String descripcionA, float precio, float gastos, long tiempo) {
-        this.codigoalfanumerico = codigo;
+    public Articulo(String codigo, String descripcionA, float precio, float gastos, LocalDateTime tiempo) {
+        this.codigoA = codigo;
         this.descripcionA = descripcionA;
         this.precio_de_venta = precio;
         this.gastos_de_envio = gastos;
@@ -21,7 +21,7 @@ public class Articulo {
 
     // Getters
     public String getCodigoalfanumerico() {
-        return codigoalfanumerico;
+        return codigoA;
     }
 
     public String getDescripcion() {
@@ -36,13 +36,13 @@ public class Articulo {
         return gastos_de_envio;
     }
 
-    public Time getTiempo_de_preparacion() {
+    public LocalDateTime getTiempo_de_preparacion() {
         return tiempo_de_preparacion;
     }
 
     // Setters
     public void setCodigoalfanumerico(String codigo) {
-        this.codigoalfanumerico = codigo;
+        this.codigoA = codigo;
     }
 
     public void setDescripcion(String descripcion) {
@@ -57,14 +57,14 @@ public class Articulo {
         this.gastos_de_envio = gastos;
     }
 
-    public void setTiempo_de_preparacion(Time tiempo) {
+    public void setTiempo_de_preparacion(LocalDateTime tiempo) {
         this.tiempo_de_preparacion = tiempo;
     }
 
     // Método toString()
     @Override
     public String toString() {
-        return "Articulo [codigoalfanumerico=" + codigoalfanumerico + ", descripcion=" + descripcionA
+        return "Articulo [codigoalfanumerico=" + codigoA + ", descripcion=" + descripcionA
                 + ", precio_de_venta=" + precio_de_venta + ", gastos_de_envio=" + gastos_de_envio
                 + ", tiempo_de_preparacion=" + tiempo_de_preparacion + "]";
     }
