@@ -12,51 +12,44 @@ public class Controlador {
     private view.GestionOS view;
 
     public Controlador() {
-        this.datos = datos;
-        this.view = view;
+        new Datos();
     }
 
     // métodos de acceso y manipulación de los datos del modelo
 
-    public String getListaArticulos() {
+    public ListaArticulos getListaArticulos() {
         return datos.listaA();
     }
 
-    public void addArticuloToList (String codigo, String descripcion, float precio, float gastos, Time tiempo) {
-        datos.addArticulo(codigo, descripcion, precio, gastos, tiempo);
-    }
-
     public ListaClientes getListaClientes() {
-        return datos.listaC();
+        return datos.listaClientes();
     }
 
-    public String getListaClientesPremium() {
+    public ListaClientesPremium getListaClientesPremium() {
         return datos.ListasClientesP();
     }
 
-    public String getListaClientesStandard() {
+    public ListaClientesEstandar getListaClientesStandard() {
         return datos.ListaClientesEstandar();
-    }
-
-    public void addCliente (String nombre, String domicilio, String nif, String email) {
-        datos.addCliente(nombre, domicilio, nif, email);
-    }
-
-    public void addClienteToAList (String nombre, String domicilio, String nif, String email, String tipoCliente) {
-        datos.addClienteToAList(nombre, domicilio, nif, email, tipoCliente);
     }
 
     public ListaPedidos getListaPedidos() {
         return datos.listaPedidos();
     }
 
+    public void addArticuloToList (String codigo, String descripcion, float precio, float gastos, Time tiempo) {
+        datos.addArticulo(codigo, descripcion, precio, gastos, tiempo);
+    }
 
+    public void addClienteToAList (String nombre, String domicilio, String nif, String email, String tipoCliente) {
+        datos.addClienteToAList(nombre, domicilio, nif, email, tipoCliente);
+    }
 
     public void deletePedidoFromLista (int numPedido) {
-        datos.deletePedido(numPedido);
+        datos.eliminarP(numPedido);
     }
 
     public void addPedido(int numero_pedido, String cliente, String articulo, int numero_de_articulos, Date fecha, Time hora) {
-        datos.addPedido(numero_pedido, cliente, articulo, numero_de_articulos, fecha, hora);
+        datos.addPedidos(numero_pedido, cliente, articulo, numero_de_articulos, fecha, hora);
     }
 }
