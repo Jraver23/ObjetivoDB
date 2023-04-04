@@ -158,7 +158,7 @@ public class Datos {
         }
         for(int i=0; i<listaPedidos.getSize();i++){
             if(listaPedidos.getAt(i).getNumero().equals(numero_pedido)){
-                listaPedidos.delete(listaPedidos.getAt(i));
+                listaPedidos.borrar(listaPedidos.getAt(i));
                 return true;
             }
         }
