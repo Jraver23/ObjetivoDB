@@ -11,7 +11,6 @@ public class Pedidos {
     Cliente cliente;
     Articulo articulo;
     int numero_de_articulos;
-
     LocalDateTime fecha;
 
     public Pedidos(int numero_pedido, Cliente cliente, Articulo articulo, int numero_de_articulos, LocalDateTime fecha) {
