@@ -9,47 +9,77 @@ import java.util.Date;
 public class Controlador {
 
     private Datos datos; // instancia de la clase Datos
-    private view.GestionOS view;
 
     public Controlador() {
         new Datos();
+        datos.cargaDatos();
     }
 
-    // métodos de acceso y manipulación de los datos del modelo
+    // Métodos que pasaran las listas de datos a la vista
 
-    public ListaArticulos getListaArticulos() {
+    public String getListaArticulos() {
         return datos.listaA();
     }
 
-    public ListaClientes getListaClientes() {
-        return datos.listaClientes();
+    public String getListaClientes() {
+        return datos.ListaClientes();
     }
 
-    public ListaClientesPremium getListaClientesPremium() {
+    public String getListaClientesPremium() {
         return datos.ListasClientesP();
     }
 
-    public ListaClientesEstandar getListaClientesStandard() {
+    public String getListaClientesStandard() {
         return datos.ListaClientesEstandar();
     }
 
-    public ListaPedidos getListaPedidos() {
-        return datos.listaPedidos();
+    public String getListaPedidosPendEst() {
+        return datos.ListadoPPE();
     }
 
-    public void addArticuloToList (String codigo, String descripcion, float precio, float gastos, Time tiempo) {
+    public String getListaPedidosPendPre() {
+        return datos.ListadoPPP();
+    }
+
+    public String getListaPedidosEnviadosEst() {
+        return datos.listadoPEE();
+    }
+
+    public String getListaPedidosEnviadosPre() {
+        return datos.listadoPEP();
+    }
+
+
+
+    // Adición de datos a las listas
+    public boolean addArticuloToList (String codigo, String descripcion, float precio, float gastos, Time tiempo) {
+        if (datos.existeArticulo(codigo) == true){
+            return false;
+        }
         datos.addArticulo(codigo, descripcion, precio, gastos, tiempo);
+        return true;
     }
 
-    public void addClienteToAList (String nombre, String domicilio, String nif, String email, String tipoCliente) {
+    public boolean addClienteToAList (String nombre, String domicilio, String nif, String email, String tipoCliente) {
+        if (datos.existeCliente(email) == true){
+            return false;
+        }
         datos.addClienteToAList(nombre, domicilio, nif, email, tipoCliente);
+        return true;
     }
 
-    public void deletePedidoFromLista (int numPedido) {
-        datos.eliminarP(numPedido);
+    public boolean deletePedidoFromLista (int numPedido) {
+        if (datos.eliminarP(numPedido)==true){
+            return true;
+        }
+        System.out.println("El pedido no existe.");
+        return false;
     }
 
-    public void addPedido(int numero_pedido, String cliente, String articulo, int numero_de_articulos, Date fecha, Time hora) {
-        datos.addPedidos(numero_pedido, cliente, articulo, numero_de_articulos, fecha, hora);
+    public boolean addPedido(int numero_pedido, String email, String articulo, int numero_de_articulos, Date fecha, Time hora) {
+        if (datos.existeCliente(email) == true){
+            datos.addPedidos(numero_pedido, email, articulo, numero_de_articulos, fecha, hora);
+        }
+        return false;
     }
 }
