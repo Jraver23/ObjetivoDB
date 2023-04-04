@@ -9,18 +9,31 @@ public class ClienteEstandar extends Cliente {
     // Aqui van los constructores y las caracteristicas de cliente estandar
 
 
+    @Override
     public String tipoCliente(){
         return "ClienteEstandar";
 
     }
 
+    @Override
     public float calcAnual(){
         return 0*12;
 
     }
 
+    @Override
     public float descuentoEnv(){
         return 1;
+    }
+
+    @Override
+    public String toString() {
+        return "ClienteEstandar{" +
+                "email='" + email + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", domicilio='" + domicilio + '\'' +
+                ", nif='" + nif + '\'' +
+                '}';
     }
 
 }

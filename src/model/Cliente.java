@@ -2,10 +2,10 @@ package model;
 
 public abstract class Cliente {
 
-    private String nombre;
-    private String domicilio;
-    private String nif;
-    private String email;
+    String nombre;
+    String domicilio;
+    String nif;
+    String email;
     public Cliente(String nombre, String domicilio, String nif, String email) {
         this.nombre = nombre;
         this.domicilio = domicilio;
