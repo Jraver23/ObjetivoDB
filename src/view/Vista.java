@@ -5,6 +5,8 @@ import controlador.Controlador;
 import java.sql.Time;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+
 public class GestionOS {
     private Controlador controlador;
     Scanner teclado = new Scanner(System.in);
@@ -47,8 +49,17 @@ public class GestionOS {
                                 precio_de_venta = Float.parseFloat(teclado.nextLine());
                                 System.out.print("Escriba el gasto de envio del producto:\n");
                                 gastos_de_envio = Float.parseFloat(teclado.nextLine());
-                                System.out.print("Cual es su tiempo de preparacion?:\n");
-                                tiempo_de_preparacion = Float.parseFloat(teclado.nextLine());
+                                String tiempo;
+                                System.out.print("Cual es su tiempo de preparacion?: (hh:mm:ss)\n");
+                                tiempo = teclado.nextLine();
+                                Pattern patronHora = Pattern.compile("^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$");
+                                boolean esFormatoHoraValido = patronHora.matcher(tiempo).matches();
+                                if (esFormatoHoraValido) {
+                                    tiempo_de_preparacion = Time.valueOf(tiempo);
+                                } else {
+                                    System.out.println("El formato de hora no es válido");
+                                    break;
+                                }
                                 controlador.addArticuloToList(codigoalfanumerico,descripcion,precio_de_venta,gastos_de_envio,tiempo_de_preparacion);
                                 break;
                             case '2':
@@ -161,17 +172,22 @@ public class GestionOS {
                                         controlador.addPedido(numero_pedido,cliente,articulo,numero_de_articulos,fecha,hora);
                                         break;
                                     case '2':
-                                        int numero_pedido;
+                                        int numero_pedido2;
                                         Scanner teclado = new Scanner(System.in);
                                         System.out.print("Eliminando Pedido...\n");
                                         System.out.print("Escriba el numero de pedido para verificar que no se ha enviado\n");
-                                        numero_pedido = Integer.parseInt(teclado.nextLine());
-                                        controlador.deletePedidoFromLista(numero_pedido);
+                                        numero_pedido2 = Integer.parseInt(teclado.nextLine());
+                                        controlador.deletePedidoFromLista(numero_pedido2);
 
                                         break;
                                     case '3':
+                                        //Aqui hay dudas, que devuelvo?
                                         System.out.print("Mostrando Pedidos pendientes de envio...\n");
-                                        controlador.getListaPedidosPendientes();
+                                        controlador.getListaPedidos();
+                                        /*for(int i = 0; controlador.getListaPedidos().getSize(); ++i){
+
+
+                                        }*/
                                         System.out.print("Por que cliente (email) quiere filtrar?\n");
                                         String email;
                                         Scanner teclado = new Scanner(System.in);

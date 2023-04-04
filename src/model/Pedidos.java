@@ -1,7 +1,9 @@
 package model;
 
-import java.sql.Time;
-import java.util.Date;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class Pedidos {
 
@@ -9,16 +11,14 @@ public class Pedidos {
     Cliente cliente;
     Articulo articulo;
     int numero_de_articulos;
-    Date fecha;
-    Time hora;
+    LocalDateTime fecha;
 
-    public Pedidos(int numero_pedido, Cliente cliente, Articulo articulo, int numero_de_articulos, String fecha, String hora) {
+    public Pedidos(int numero_pedido, Cliente cliente, Articulo articulo, int numero_de_articulos, LocalDateTime fecha) {
         this.numero_pedido = numero_pedido;
         this.cliente = cliente;
         this.articulo = articulo;
         this.numero_de_articulos = numero_de_articulos;
         this.fecha = fecha;
-        this.hora = hora;
     }
 
     public int getNumero_pedido() {
@@ -53,21 +53,14 @@ public class Pedidos {
         this.numero_de_articulos = numero_de_articulos;
     }
 
-    public Date getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 
-    public Time getHora() {
-        return hora;
-    }
-
-    public void setHora(Time hora) {
-        this.hora = hora;
-    }
 
     @Override
     public String toString() {
@@ -77,21 +70,14 @@ public class Pedidos {
                 ", articulo=" + articulo +
                 ", numero_de_articulos=" + numero_de_articulos +
                 ", fecha=" + fecha +
-                ", hora=" + hora +
                 '}';
     }
 
-    public boolean pedidoEnviado(){
-        Date fechaPedido = getFecha();
-        Time tiempoPreparacion = articulo.getTiempo_de_preparacion();
-        Date fechaEnvio = new Date(fechaPedido.getTime() + tiempoPreparacion.getTime());
-
-        Date fechaActual = new Date();
-        if (fechaActual.compareTo(fechaEnvio) > 0) {
-            return true;
-        } else {
-            return false;
-        }
+    public boolean pedidoEnviado() {
+        LocalDateTime fechaPedido = getFecha();
+        Duration tiempoPreparacion = Duration.between(LocalTime.MIN, articulo.getTiempo_de_preparacion());
+        LocalDateTime fechaEnvio = fechaPedido.plus(tiempoPreparacion);
+        return LocalDateTime.now().isAfter(fechaEnvio);
     }
 
 
@@ -100,6 +86,4 @@ public class Pedidos {
 
     }
 
-    public Object getNumero() {
-    }
 }
