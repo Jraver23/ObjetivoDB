@@ -266,7 +266,6 @@ public class GestionOS {
                                 System.out.print("Escriba el numero de pedido para verificar que no se ha enviado\n");
                                 numero_pedido2 = Integer.parseInt(teclado.nextLine());
 
-                                controlador.deletePedidoFromLista(numero_pedido2);
                                 boolean resultado;
                                 resultado = controlador.deletePedidoFromLista(numero_pedido2);
                                 if(resultado){
@@ -274,49 +273,67 @@ public class GestionOS {
                                 }else{
                                     System.out.println("No se ha eliminado el pedido");
                                 }
-
                                 break;
                             case '3':
                                 //Aqui hay dudas, que devuelvo?
                                 System.out.print("Mostrando Pedidos pendientes de envio...\n");
-                                String listaPedidosPendientes = controlador.getListaPedidosPendientes();
-                                if(listaPedidosPendientes.isEmpty()) System.out.print("No hay lista de pedidos pendientes\n");
-                                else {
-                                    System.out.print(listaPedidosPendientes);
-                                    System.out.print("Por que cliente (email) quiere filtrar?\n");
-                                    String email2;
-                                    Scanner teclado = new Scanner(System.in);
-                                    email2 = teclado.nextLine();
-                                    while (email2.isEmpty()){
-                                        System.out.print("Escriba el email:\n");
-                                        email2 = teclado.nextLine();
-                                    }
-                                    String ListaPedidosPendientesCliente = controlador.getListaPedidosPendientesPorCliente(email);
-                                    if(listaPedidosPendientesCliente.isEmpty()) System.out.print("No hay lista de pedidos pendientes para ese cliente\n");
-                                    else {
-                                        System.out.print(listaPedidosPendientesCliente);
-                                    }
+                                System.out.print("Elegir una de las dos opciones:\n");
+                                System.out.print("1.Estandar\n");
+                                System.out.print("2.Premium\n");
+                                System.out.print("0.Atrás\n");
+                                char opciopp = pedirOpcionArticulo();
+                                switch (opciopp) {
+                                    case '1':
+                                        String listaPedidosPendientesEstandar;
+                                        listaPedidosPendientesEstandar= controlador.listaPedidosPendientesEstandar();
+                                        if(!listaPedidosPendientesEstandar.isEmpty()){
+                                            System.out.println("Pedidos Pendientes de clientes Estandar:");
+                                            System.out.println(listaPedidosPendientesEstandar);
+                                        }else{
+                                            System.out.println("El listado está vacío.");
+                                        }
+                                        break;
+                                    case '2':
+                                        String listaPedidosPendientesPremium;
+                                        listaPedidosPendientesPremium= controlador.listaPedidosPendientesPremium();
+                                        if(!listaPedidosPendientesPremium.isEmpty()){
+                                            System.out.println("Pedidos Pendientes de clientes Premium:");
+                                            System.out.println(listaPedidosPendientesPremium);
+                                        }else{
+                                            System.out.println("El listado está vacío.");
+                                        }
+                                        break;
+                                    case '0':
                                 }
-                                break;
                             case '4':
                                 System.out.print("Mostrando Pedidos enviados...\n");
-                                String listaPedidosEnviados = controlador.getListaPedidosEnviados();
-                                if(listaPedidosEnviados.isEmpty()) System.out.print("No hay lista de pedidos enviados\n");
-                                else {
-                                    System.out.print(listaPedidosEnviados);
-                                    System.out.print("Por que cliente (email) quiere filtrar?\n");
-                                    String email2;
-                                    Scanner teclado = new Scanner(System.in);
-                                    email2 = teclado.nextLine();
-                                    while (email2.isEmpty()){
-                                        System.out.print("Escriba el email:\n");
-                                        email2 = teclado.nextLine();
-                                    }
-                                    String ListaPedidosEnviadosCliente = controlador.getListaPedidosEnviadosPorCliente(email);
-                                    if(listaPedidosEnviadosCliente.isEmpty()) System.out.print("No hay lista de pedidos enviados para ese cliente\n");
-                                    else {
-                                        System.out.print(listaPedidosEnviadosCliente);
-                                    }
+                                System.out.print("Elegir una de las dos opciones:\n");
+                                System.out.print("1.Estandar\n");
+                                System.out.print("2.Premium\n");
+                                System.out.print("0.Atrás\n");
+                                char opciope = pedirOpcionArticulo();
+                                switch (opciope) {
+                                    case '1':
+                                        String listaPedidosEnviadosEstandar;
+                                        listaPedidosEnviadosEstandar= controlador.listaPedidosEnviadosEstandar();
+                                        if(!listaPedidosEnviadosEstandar.isEmpty()){
+                                            System.out.println("Pedidos Enviados de clientes Estandar:");
+                                            System.out.println(listaPedidosEnviadosEstandar);
+                                        }else{
+                                            System.out.println("El listado está vacío.");
+                                        }
+                                        break;
+                                    case '2':
+                                        String listaPedidosEnviadosPremium;
+                                        listaPedidosEnviadosPremium= controlador.listaPedidosEnviadosPremium();
+                                        if(!listaPedidosEnviadosPremium.isEmpty()){
+                                            System.out.println("Pedidos Pendientes de clientes Premium:");
+                                            System.out.println(listaPedidosEnviadosPremium);
+                                        }else{
+                                            System.out.println("El listado está vacío.");
+                                        }
+                                        break;
+                                    case '0':
                                 }
                             case '0':
                         }
