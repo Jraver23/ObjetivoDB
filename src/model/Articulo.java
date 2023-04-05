@@ -8,10 +8,10 @@ public class Articulo {
     String descripcionA;
     float precio_de_venta;
     float gastos_de_envio;
-    LocalDateTime tiempo_de_preparacion;
+    long tiempo_de_preparacion;
 
     // Constructor
-    public Articulo(String codigo, String descripcionA, float precio, float gastos, LocalDateTime tiempo) {
+    public Articulo(String codigo, String descripcionA, float precio, float gastos, long tiempo) {
         this.codigoA = codigo;
         this.descripcionA = descripcionA;
         this.precio_de_venta = precio;
@@ -36,7 +36,7 @@ public class Articulo {
         return gastos_de_envio;
     }
 
-    public LocalDateTime getTiempo_de_preparacion() {
+    public long getTiempo_de_preparacion() {
         return tiempo_de_preparacion;
     }
 
@@ -57,7 +57,7 @@ public class Articulo {
         this.gastos_de_envio = gastos;
     }
 
-    public void setTiempo_de_preparacion(LocalDateTime tiempo) {
+    public void setTiempo_de_preparacion(long tiempo) {
         this.tiempo_de_preparacion = tiempo;
     }
 

@@ -8,19 +8,30 @@ public class ClientePremium extends Cliente {
 
     // Aqui van los constructores y las caracteristicas de cliente premium con sus ecuaciones
 
-
+    @Override
     public String tipoCliente(){
         return "ClientePremium";
 
     }
-
+//DUDA
+    @Override
     public float calcAnual(){
         return 30*12;
 
     }
-
+    @Override
     public float descuentoEnv(){
         return (float) 0.2;
+    }
+
+    @Override
+    public String toString() {
+        return "ClientePremium{" +
+                "email='" + email + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", domicilio='" + domicilio + '\'' +
+                ", nif='" + nif + '\'' +
+                '}';
     }
 
 }

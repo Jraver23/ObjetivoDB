@@ -74,15 +74,19 @@ public class Pedidos {
     }
 
     public boolean pedidoEnviado() {
-        LocalDateTime fechaPedido = getFecha();
-        Duration tiempoPreparacion = Duration.between(LocalTime.MIN, articulo.getTiempo_de_preparacion());
-        LocalDateTime fechaEnvio = fechaPedido.plus(tiempoPreparacion);
-        return LocalDateTime.now().isAfter(fechaEnvio);
+        if(fecha.plusDays(this.articulo.tiempo_de_preparacion).isBefore(LocalDateTime.now())) {
+            return true;
+        }
+        return false;
     }
 
 
     public float precioEnvio(){
-        return numero_pedido*articulo.getPrecio_de_venta();
+        if (cliente instanceof ClientePremium) {
+            return (this.articulo.getPrecio_de_venta() * this.getNumero_de_articulos()) + (this.articulo.getGastos_de_envio() * (1 - ((ClientePremium) cliente).descuentoEnv()/100));
+        } else {
+            return (this.articulo.getPrecio_de_venta() * this.getNumero_de_articulos()) + this.articulo.getGastos_de_envio();
+        }
 
     }
 
