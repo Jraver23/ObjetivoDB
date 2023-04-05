@@ -70,7 +70,7 @@ public class Pedidos {
                 ", articulo=" + articulo +
                 ", numero_de_articulos=" + numero_de_articulos +
                 ", fecha=" + fecha +
-                '}';
+                "}\n";
     }
 
     public boolean pedidoEnviado() {

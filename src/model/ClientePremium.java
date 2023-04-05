@@ -31,7 +31,7 @@ public class ClientePremium extends Cliente {
                 ", nombre='" + nombre + '\'' +
                 ", domicilio='" + domicilio + '\'' +
                 ", nif='" + nif + '\'' +
-                '}';
+                "}\n";
     }
 
 }

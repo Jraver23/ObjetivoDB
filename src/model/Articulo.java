@@ -66,6 +66,6 @@ public class Articulo {
     public String toString() {
         return "Articulo [codigoalfanumerico=" + codigoA + ", descripcion=" + descripcionA
                 + ", precio_de_venta=" + precio_de_venta + ", gastos_de_envio=" + gastos_de_envio
-                + ", tiempo_de_preparacion=" + tiempo_de_preparacion + "]";
+                + ", tiempo_de_preparacion=" + tiempo_de_preparacion + "]\n";
     }
 }

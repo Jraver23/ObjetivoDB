@@ -52,7 +52,7 @@ public abstract class Cliente {
                 ", domicilio='" + domicilio + '\'' +
                 ", nif='" + nif + '\'' +
                 ", email='" + email + '\'' +
-                '}';
+                "}\n";
     }
 
     public abstract String tipoCliente();

@@ -90,6 +90,7 @@ public class GestionOS {
                                 break;
 
                             case '0':
+                                salir2 = true;
                         }
                     } while (!salir2) ;
                     break;
@@ -175,6 +176,7 @@ public class GestionOS {
                                     System.out.println(listaClientePremium);
                                 }
                             case '0':
+                                salir3 = true;
                         }
                     } while (!salir3) ;
                     break;
@@ -194,8 +196,6 @@ public class GestionOS {
                                 String cliente;
                                 String articulo;
                                 int numero_de_articulos;
-                                Date fecha;
-                                Time hora;
 
                                 Scanner teclado = new Scanner(System.in);
                                 System.out.print("Creando nuevo Pedido...\n");
@@ -282,66 +282,77 @@ public class GestionOS {
                                 break;
                             case '3':
                                 //Aqui hay dudas, que devuelvo?
-                                System.out.print("Mostrando Pedidos pendientes de envio...\n");
-                                System.out.print("Elegir una de las dos opciones:\n");
-                                System.out.print("1.Estandar\n");
-                                System.out.print("2.Premium\n");
-                                System.out.print("0.Atrás\n");
-                                char opciopp = pedirOpcionArticulo();
-                                switch (opciopp) {
-                                    case '1':
-                                        String listaPedidosPendientesEstandar;
-                                        listaPedidosPendientesEstandar= controlador.getListaPedidosPendEst();
-                                        if(!listaPedidosPendientesEstandar.isEmpty()){
-                                            System.out.println("Pedidos Pendientes de clientes Estandar:");
-                                            System.out.println(listaPedidosPendientesEstandar);
-                                        }else{
-                                            System.out.println("El listado está vacío.");
-                                        }
-                                        break;
-                                    case '2':
-                                        String listaPedidosPendientesPremium;
-                                        listaPedidosPendientesPremium= controlador.getListaPedidosPendPre();
-                                        if(!listaPedidosPendientesPremium.isEmpty()){
-                                            System.out.println("Pedidos Pendientes de clientes Premium:");
-                                            System.out.println(listaPedidosPendientesPremium);
-                                        }else{
-                                            System.out.println("El listado está vacío.");
-                                        }
-                                        break;
-                                    case '0':
-                                }
+                                boolean salir5 = false;
+                                do {
+                                    System.out.print("Mostrando Pedidos pendientes de envio...\n");
+                                    System.out.print("Elegir una de las dos opciones:\n");
+                                    System.out.print("1.Estandar\n");
+                                    System.out.print("2.Premium\n");
+                                    System.out.print("0.Atrás\n");
+                                    char opciopp = pedirOpcionArticulo();
+                                    switch (opciopp) {
+                                        case '1':
+                                            String listaPedidosPendientesEstandar;
+                                            listaPedidosPendientesEstandar = controlador.getListaPedidosPendEst();
+                                            if (!listaPedidosPendientesEstandar.isEmpty()) {
+                                                System.out.println("Pedidos Pendientes de clientes Estandar:");
+                                                System.out.println(listaPedidosPendientesEstandar);
+                                            } else {
+                                                System.out.println("El listado está vacío.");
+                                            }
+                                            break;
+                                        case '2':
+                                            String listaPedidosPendientesPremium;
+                                            listaPedidosPendientesPremium = controlador.getListaPedidosPendPre();
+                                            if (!listaPedidosPendientesPremium.isEmpty()) {
+                                                System.out.println("Pedidos Pendientes de clientes Premium:");
+                                                System.out.println(listaPedidosPendientesPremium);
+                                            } else {
+                                                System.out.println("El listado está vacío.");
+                                            }
+                                            break;
+                                        case '0':
+                                            salir5=true;
+                                    }
+                                }while(!salir5);
+                                break;
                             case '4':
-                                System.out.print("Mostrando Pedidos enviados...\n");
-                                System.out.print("Elegir una de las dos opciones:\n");
-                                System.out.print("1.Estandar\n");
-                                System.out.print("2.Premium\n");
-                                System.out.print("0.Atrás\n");
-                                char opciope = pedirOpcionArticulo();
-                                switch (opciope) {
-                                    case '1':
-                                        String listaPedidosEnviadosEstandar;
-                                        listaPedidosEnviadosEstandar= controlador.getListaPedidosEnviadosEst();
-                                        if(!listaPedidosEnviadosEstandar.isEmpty()){
-                                            System.out.println("Pedidos Enviados de clientes Estandar:");
-                                            System.out.println(listaPedidosEnviadosEstandar);
-                                        }else{
-                                            System.out.println("El listado está vacío.");
-                                        }
-                                        break;
-                                    case '2':
-                                        String listaPedidosEnviadosPremium;
-                                        listaPedidosEnviadosPremium= controlador.getListaPedidosEnviadosPre();
-                                        if(!listaPedidosEnviadosPremium.isEmpty()){
-                                            System.out.println("Pedidos Pendientes de clientes Premium:");
-                                            System.out.println(listaPedidosEnviadosPremium);
-                                        }else{
-                                            System.out.println("El listado está vacío.");
-                                        }
-                                        break;
-                                    case '0':
-                                }
+                                boolean salir6 = false;
+                                do {
+                                    System.out.print("Mostrando Pedidos enviados...\n");
+                                    System.out.print("Elegir una de las dos opciones:\n");
+                                    System.out.print("1.Estandar\n");
+                                    System.out.print("2.Premium\n");
+                                    System.out.print("0.Atrás\n");
+                                    char opciope = pedirOpcionArticulo();
+                                    switch (opciope) {
+                                        case '1':
+                                            String listaPedidosEnviadosEstandar;
+                                            listaPedidosEnviadosEstandar = controlador.getListaPedidosEnviadosEst();
+                                            if (!listaPedidosEnviadosEstandar.isEmpty()) {
+                                                System.out.println("Pedidos Enviados de clientes Estandar:");
+                                                System.out.println(listaPedidosEnviadosEstandar);
+                                            } else {
+                                                System.out.println("El listado está vacío.");
+                                            }
+                                            break;
+                                        case '2':
+                                            String listaPedidosEnviadosPremium;
+                                            listaPedidosEnviadosPremium = controlador.getListaPedidosEnviadosPre();
+                                            if (!listaPedidosEnviadosPremium.isEmpty()) {
+                                                System.out.println("Pedidos Pendientes de clientes Premium:");
+                                                System.out.println(listaPedidosEnviadosPremium);
+                                            } else {
+                                                System.out.println("El listado está vacío.");
+                                            }
+                                            break;
+                                        case '0':
+                                            salir6 = true;
+                                    }
+                                }while(!salir6);
+                                break;
                             case '0':
+                                salir4 = true;
                         }
                     } while (!salir4) ;
                     break;

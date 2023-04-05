@@ -33,7 +33,7 @@ public class ClienteEstandar extends Cliente {
                 ", nombre='" + nombre + '\'' +
                 ", domicilio='" + domicilio + '\'' +
                 ", nif='" + nif + '\'' +
-                '}';
+                "}\n";
     }
 
 }
