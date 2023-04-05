@@ -15,10 +15,10 @@ public class Datos {
     private Lista<Pedidos> listaPedidosPendientes;
 
     //Constructor publico, inicializa los atributos
-    public Datos(ListaArticulos listaArticulos, ListaClientes listaClientes, ListaPedidos listaPedidos) {
-        this.listaArticulos = listaArticulos;
-        this.listaClientes = listaClientes;
-        this.listaPedidos = listaPedidos;
+    public Datos() {
+        listaArticulos = new ListaArticulos();
+        listaClientes = new ListaClientes();
+        listaPedidos = new ListaPedidos();
     }
 
     // GESTIÓN DE ARTICULOS
@@ -92,9 +92,9 @@ public class Datos {
         listaArticulos.add(articulo2);
         Articulo articulo3 = new Articulo("003", "Silla", 100, 5, 30);
         listaArticulos.add(articulo3);
-        Pedidos pedidos1 = new Pedidos(1, cliente1, articulo1, 2, "2023,10,10", "09:00");
-        Pedidos pedidos2 = new Pedidos(2, cliente2, articulo2, 2, "2023,05,23", "10:00");
-        Pedidos pedidos3 = new Pedidos(3, cliente3, articulo3, 1, "2023,06;02", "12:00");
+        Pedidos pedidos1 = new Pedidos(1, cliente1, articulo1, 2, LocalDateTime.of(2023,04,03,17,15,23));
+        Pedidos pedidos2 = new Pedidos(2, cliente2, articulo2, 2, LocalDateTime.of(2023,04,05,18,00,05));
+        Pedidos pedidos3 = new Pedidos(3, cliente3, articulo3, 1, LocalDateTime.of(2023,04,04,19,00,45));
         listaPedidos.add(pedidos1);
         listaPedidos.add(pedidos2);
         listaPedidos.add(pedidos3);
@@ -142,7 +142,7 @@ public class Datos {
     return null;
 }
 
-    public void addPedidos (int numero_pedido, String email, String Codigoalfanumerico, int numero_de_articulo, LocalDateTime fecha, long hora){
+    public void addPedidos (int numero_pedido, String email, String codigoA, int numero_de_articulo, LocalDateTime fecha){
     Pedidos pedidos;
     //Da como resultado Cliente y Articulo por los parametros unicos
         Cliente cliente=getCliente(email);
@@ -157,7 +157,7 @@ public class Datos {
             return false;
         }
         for(int i=0; i<listaPedidos.getSize();i++){
-            if(listaPedidos.getAt(i).getNumero().equals(numero_pedido)){
+            if(listaPedidos.getAt(i).numero_pedido == numero_pedido){
                 listaPedidos.borrar(listaPedidos.getAt(i));
                 return true;
             }

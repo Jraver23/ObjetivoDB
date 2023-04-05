@@ -4,14 +4,16 @@ import model.*;
 
 import java.sql.Time;
 import java.util.Date;
-
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class Controlador {
 
     private Datos datos; // instancia de la clase Datos
 
     public Controlador() {
-        new Datos();
+        datos = new Datos();
         datos.cargaDatos();
     }
 
@@ -52,7 +54,7 @@ public class Controlador {
 
 
     // Adición de datos a las listas
-    public boolean addArticuloToList (String codigo, String descripcion, float precio, float gastos, Time tiempo) {
+    public boolean addArticuloToList (String codigo, String descripcion, float precio, float gastos, long tiempo) {
         if (datos.existeArticulo(codigo) == true){
             return false;
         }
@@ -76,9 +78,9 @@ public class Controlador {
         return false;
     }
 
-    public boolean addPedido(int numero_pedido, String email, String articulo, int numero_de_articulos, Date fecha, Time hora) {
+    public boolean addPedido(int numero_pedido, String email, String articulo, int numero_de_articulos, LocalDateTime fecha) {
         if (datos.existeCliente(email) == true){
-            datos.addPedidos(numero_pedido, email, articulo, numero_de_articulos, fecha, hora);
+            datos.addPedidos(numero_pedido, email, articulo, numero_de_articulos, fecha);
         }
         return false;
     }
