@@ -144,7 +144,7 @@ public class GestionOS {
                                     tipo = teclado.nextLine();
                                 }
                                 boolean hecho;
-                                hecho = controlador.addCliente(nombre,domicilio, nif, email, tipo);
+                                hecho = controlador.addClienteToAList(nombre,domicilio, nif, email, tipo);
                                 if(hecho==true){
                                     System.out.println("Cliente añadido");
                                 }else{
@@ -190,7 +190,7 @@ public class GestionOS {
                         opcio4 = pedirOpcionClienteoPedido();
                         switch (opcio4) {
                             case '1':
-                                int numero_pedido;
+                                int numero_pedido = -1;
                                 String cliente;
                                 String articulo;
                                 int numero_de_articulos;
@@ -199,13 +199,19 @@ public class GestionOS {
 
                                 Scanner teclado = new Scanner(System.in);
                                 System.out.print("Creando nuevo Pedido...\n");
-                                numero_pedido = controlador.getListaPedidos().getSize() + 1;
+                                System.out.print("Escriba el numero de pedido:\n");
+                                numero_pedido = Integer.parseInt(teclado.nextLine());
+                                while(numero_pedido == -1){
+                                    System.out.print("Escriba el numero de pedido:\n");
+                                    numero_pedido = Integer.parseInt(teclado.nextLine());
+                                }
                                 System.out.print("Escriba el email del cliente:\n");
                                 cliente = teclado.nextLine();
                                 while(cliente.isEmpty()){
                                     System.out.print("Escriba un email:\n");
                                     cliente = teclado.nextLine();
                                 }
+                                /*
                                 //Esto no es mio, es del controlador
                                 boolean existe = false;
                                 for(int i = 0; i < controlador.getListaClientes().getSize();++i){
@@ -219,7 +225,7 @@ public class GestionOS {
                                     String email;
                                     String tipoCliente;
 
-                                    Scanner teclado = new Scanner(System.in);
+                                    teclado = new Scanner(System.in);
                                     System.out.print("Creando nuevo Cliente...\n");
                                     System.out.print("Escriba el nombre del cliente:\n");
                                     nombre = teclado.nextLine();
@@ -233,7 +239,7 @@ public class GestionOS {
                                     tipoCliente = teclado.nextLine();
                                     controlador.addClienteToAList(nombre,domicilio,nif,email, tipoCliente);
                                 }
-
+*/
 
                                 System.out.print("Escriba el codigo alfanumerico del articulo:\n");
                                 articulo = teclado.nextLine();
@@ -260,7 +266,7 @@ public class GestionOS {
                                 break;
                             case '2':
                                 int numero_pedido2;
-                                Scanner teclado = new Scanner(System.in);
+                                teclado = new Scanner(System.in);
 
                                 System.out.print("Eliminando Pedido...\n");
                                 System.out.print("Escriba el numero de pedido para verificar que no se ha enviado\n");
@@ -285,7 +291,7 @@ public class GestionOS {
                                 switch (opciopp) {
                                     case '1':
                                         String listaPedidosPendientesEstandar;
-                                        listaPedidosPendientesEstandar= controlador.listaPedidosPendientesEstandar();
+                                        listaPedidosPendientesEstandar= controlador.getListaPedidosPendEst();
                                         if(!listaPedidosPendientesEstandar.isEmpty()){
                                             System.out.println("Pedidos Pendientes de clientes Estandar:");
                                             System.out.println(listaPedidosPendientesEstandar);
@@ -295,7 +301,7 @@ public class GestionOS {
                                         break;
                                     case '2':
                                         String listaPedidosPendientesPremium;
-                                        listaPedidosPendientesPremium= controlador.listaPedidosPendientesPremium();
+                                        listaPedidosPendientesPremium= controlador.getListaPedidosPendPre();
                                         if(!listaPedidosPendientesPremium.isEmpty()){
                                             System.out.println("Pedidos Pendientes de clientes Premium:");
                                             System.out.println(listaPedidosPendientesPremium);
@@ -315,7 +321,7 @@ public class GestionOS {
                                 switch (opciope) {
                                     case '1':
                                         String listaPedidosEnviadosEstandar;
-                                        listaPedidosEnviadosEstandar= controlador.listaPedidosEnviadosEstandar();
+                                        listaPedidosEnviadosEstandar= controlador.getListaPedidosEnviadosEst();
                                         if(!listaPedidosEnviadosEstandar.isEmpty()){
                                             System.out.println("Pedidos Enviados de clientes Estandar:");
                                             System.out.println(listaPedidosEnviadosEstandar);
@@ -325,7 +331,7 @@ public class GestionOS {
                                         break;
                                     case '2':
                                         String listaPedidosEnviadosPremium;
-                                        listaPedidosEnviadosPremium= controlador.listaPedidosEnviadosPremium();
+                                        listaPedidosEnviadosPremium= controlador.getListaPedidosEnviadosPre();
                                         if(!listaPedidosEnviadosPremium.isEmpty()){
                                             System.out.println("Pedidos Pendientes de clientes Premium:");
                                             System.out.println(listaPedidosEnviadosPremium);
