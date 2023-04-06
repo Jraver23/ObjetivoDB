@@ -46,7 +46,7 @@ public class GestionOS {
 
                                 Scanner teclado = new Scanner(System.in);
                                 System.out.print("Creando nuevo Articulo...\n");
-                                System.out.print("Escriba el numero alfanumerico del nuevo producto:\n");
+                                System.out.print("Escriba el codigo alfanumerico del nuevo producto:\n");
                                 codigoalfanumerico = teclado.nextLine();
                                 while(codigoalfanumerico.isEmpty()){
                                     System.out.print("Escriba un codigo:\n");
@@ -77,12 +77,12 @@ public class GestionOS {
                                     tiempo = Long.parseLong((teclado.nextLine()));
                                 }
                                 controlador.addArticuloToList(codigoalfanumerico,descripcion,precio_de_venta,gastos_de_envio,tiempo);
-                                System.out.print("Articulo guardado\n");
+                                System.out.print("El articulo se ha guardado.\n");
                                 break;
                             case '2':
                                 String listaArticulo;
                                 listaArticulo = controlador.getListaArticulos();
-                                if(listaArticulo.isEmpty()) System.out.print("No hay ningun articulo\n");
+                                if(listaArticulo.isEmpty()) System.out.print("No hay ningun articulo.\n");
                                 else {
                                     System.out.print("Lista de articulos:\n");
                                     System.out.print(listaArticulo);
@@ -137,7 +137,7 @@ public class GestionOS {
                                     System.out.print("Escriba de nuevo el email:\n");
                                     email = teclado.nextLine();
                                 }
-                                System.out.println("De que tipo de cliente se trata? (Estandar o Premium)");
+                                System.out.println("De que tipo de cliente se trata? (Por favor escriba: Estandar o Premium)");
                                 String tipo;
                                 tipo = teclado.nextLine();
                                 while ((tipo.isEmpty()) || ((tipo.compareToIgnoreCase("Estandar")!=0) && (tipo.compareToIgnoreCase("Premium")!=0))) {
@@ -147,14 +147,14 @@ public class GestionOS {
                                 boolean hecho;
                                 hecho = controlador.addClienteToAList(nombre,domicilio, nif, email, tipo);
                                 if(hecho==true){
-                                    System.out.println("Cliente añadido");
+                                    System.out.println("El cliente se ha añadido.");
                                 }else{
-                                    System.out.println("No se ha añadido el cliente");
+                                    System.out.println("No se ha añadido el cliente.");
                                 }
                                 break;
                             case '2':
                                 String listaCliente = controlador.getListaClientes();
-                                if(listaCliente.isEmpty()) System.out.println("No hay clientes");
+                                if(listaCliente.isEmpty()) System.out.println("No hay clientes.");
                                 else{
                                     System.out.println("Lista de clientes:");
                                     System.out.println(listaCliente);
@@ -162,7 +162,7 @@ public class GestionOS {
                                 break;
                             case '3':
                                 String listaClienteEstandar = controlador.getListaClientesStandard();
-                                if(listaClienteEstandar.isEmpty()) System.out.println("No hay clientes Estandar");
+                                if(listaClienteEstandar.isEmpty()) System.out.println("No hay clientes estandar.");
                                 else{
                                     System.out.println("Lista de clientes Estandar:");
                                     System.out.println(listaClienteEstandar);
@@ -170,7 +170,7 @@ public class GestionOS {
                                 break;
                             case '4':
                                 String listaClientePremium = controlador.getListaClientesPremium();
-                                if(listaClientePremium.isEmpty()) System.out.println("No hay clientes Premium");
+                                if(listaClientePremium.isEmpty()) System.out.println("No hay clientes premium.");
                                 else{
                                     System.out.println("Lista de clientes Premium:");
                                     System.out.println(listaClientePremium);
@@ -211,6 +211,28 @@ public class GestionOS {
                                     System.out.print("Escriba un email:\n");
                                     cliente = teclado.nextLine();
                                 }
+
+                                if (controlador.existeCliente(cliente) == false){
+                                    String nombre;
+                                    String domicilio;
+                                    String nif;
+                                    String email;
+                                    String tipoCliente;
+
+                                    teclado = new Scanner(System.in);
+                                    System.out.print("El cliente no existe, se creará uno nuevo:\n");
+                                    System.out.print("Escriba el nombre del cliente:\n");
+                                    nombre = teclado.nextLine();
+                                    System.out.print("Escriba el domicilio del cliente:\n");
+                                    domicilio = teclado.nextLine();
+                                    System.out.print("Escriba su NIF:\n");
+                                    nif = teclado.nextLine();
+                                    System.out.print("Escriba el mail del cliente (no debe existir en la BD):\n");
+                                    email = teclado.nextLine();
+                                    System.out.print("Escriba el tipo de cliente. Puede ser ClienteEstandar o ClientePremium:\n");
+                                    tipoCliente = teclado.nextLine();
+                                    controlador.addClienteToAList(nombre,domicilio,nif,email, tipoCliente);
+                                }
                                 /*
                                 //Esto no es mio, es del controlador
                                 boolean existe = false;
@@ -247,7 +269,7 @@ public class GestionOS {
                                     System.out.print("Escriba un codigo alfanumerico:\n");
                                     articulo = teclado.nextLine();
                                 }
-                                //deberia mostrar codigalfanumericos de articulos?
+
                                 System.out.print("Escriba el numero de articulos que desea:\n");
                                 numero_de_articulos = Integer.parseInt(teclado.nextLine());
                                 while(numero_de_articulos < 1){
@@ -269,15 +291,15 @@ public class GestionOS {
                                 teclado = new Scanner(System.in);
 
                                 System.out.print("Eliminando Pedido...\n");
-                                System.out.print("Escriba el numero de pedido para verificar que no se ha enviado\n");
+                                System.out.print("Escriba el numero de pedido para verificar que no se ha enviado.\n");
                                 numero_pedido2 = Integer.parseInt(teclado.nextLine());
 
                                 boolean resultado;
                                 resultado = controlador.deletePedidoFromLista(numero_pedido2);
                                 if(resultado){
-                                    System.out.println("El pedido se ha eliminado");
+                                    System.out.println("El pedido se ha eliminado.");
                                 }else{
-                                    System.out.println("No se ha eliminado el pedido");
+                                    System.out.println("No se ha eliminado el pedido.");
                                 }
                                 break;
                             case '3':
