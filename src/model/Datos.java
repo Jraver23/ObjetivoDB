@@ -175,7 +175,7 @@ public class Datos {
     return listaPedidosPendientes.toString();
     }
     public String ListadoPPP(){
-        ArrayList<Pedidos>ListaPedidosPendientes=new ArrayList<>();
+        ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>();
         for(Pedidos pedidos:listaPedidos.lista){
             if(!pedidos.pedidoEnviado() && pedidos.cliente instanceof ClientePremium){
                 listaPedidosPendientes.add(pedidos);

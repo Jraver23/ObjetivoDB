@@ -85,4 +85,8 @@ public class Controlador {
         }
         return false;
     }
+
+    public boolean existeCliente (String email){
+        return datos.existeCliente(email);
+    }
 }
