@@ -5,6 +5,7 @@ import controlador.Controlador;
 import java.sql.Time;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -233,57 +234,31 @@ public class GestionOS {
                                     tipoCliente = teclado.nextLine();
                                     controlador.addClienteToAList(nombre,domicilio,nif,email, tipoCliente);
                                 }
-                                /*
-                                //Esto no es mio, es del controlador
-                                boolean existe = false;
-                                for(int i = 0; i < controlador.getListaClientes().getSize();++i){
-                                    if(controlador.getListaClientes().getAt(i).getEmail() == cliente) existe = true;
-                                }
-                                //Asi o como ellos?
-                                if(!existe) {
-                                    String nombre;
-                                    String domicilio;
-                                    String nif;
-                                    String email;
-                                    String tipoCliente;
-
-                                    teclado = new Scanner(System.in);
-                                    System.out.print("Creando nuevo Cliente...\n");
-                                    System.out.print("Escriba el nombre del cliente:\n");
-                                    nombre = teclado.nextLine();
-                                    System.out.print("Escriba el domicilio del cliente:\n");
-                                    domicilio = teclado.nextLine();
-                                    System.out.print("Escriba su NIF:\n");
-                                    nif = teclado.nextLine();
-                                    System.out.print("Escriba el mail del cliente (no debe existir en la BD):\n");
-                                    email = teclado.nextLine();
-                                    System.out.print("Escriba el tipo de cliente. Puede ser ClienteEstandar o ClientePremium:\n");
-                                    tipoCliente = teclado.nextLine();
-                                    controlador.addClienteToAList(nombre,domicilio,nif,email, tipoCliente);
-                                }
-*/
-
-                                System.out.print("Escriba el codigo alfanumerico del articulo:\n");
-                                articulo = teclado.nextLine();
-                                while(articulo.isEmpty()){
-                                    System.out.print("Escriba un codigo alfanumerico:\n");
+                                try {
+                                    System.out.print("Escriba el codigo alfanumerico del articulo:\n");
                                     articulo = teclado.nextLine();
-                                }
-
-                                System.out.print("Escriba el numero de articulos que desea:\n");
-                                numero_de_articulos = Integer.parseInt(teclado.nextLine());
-                                while(numero_de_articulos < 1){
-                                    System.out.print("Escriba un numero valido:\n");
+                                    while (articulo.isEmpty()) {
+                                        System.out.print("Escriba un codigo alfanumerico:\n");
+                                        articulo = teclado.nextLine();
+                                    }
+                                    System.out.print("Escriba el numero de articulos que desea:\n");
                                     numero_de_articulos = Integer.parseInt(teclado.nextLine());
-                                }
-                                LocalDateTime fechaactual = LocalDateTime.now();
+                                    while (numero_de_articulos < 1) {
+                                        System.out.print("Escriba un numero valido:\n");
+                                        numero_de_articulos = Integer.parseInt(teclado.nextLine());
+                                    }
+                                    LocalDateTime fechaactual = LocalDateTime.now();
 
-                                boolean hecho2;
-                                hecho2 = controlador.addPedido(numero_pedido,cliente,articulo,numero_de_articulos,fechaactual);
-                                if (hecho2 == true) {
-                                    System.out.println("El pedido se ha añadido");
-                                } else {
-                                    System.out.println("No se ha añadido el pedido");
+                                    boolean hecho2;
+                                    hecho2 = controlador.addPedido(numero_pedido, cliente, articulo, numero_de_articulos, fechaactual);
+                                    if (hecho2 == true) {
+                                        System.out.println("El pedido se ha añadido");
+                                    } else {
+                                        System.out.println("No se ha añadido el pedido");
+                                    }
+                                }
+                                catch (InputMismatchException e){
+                                    System.out.println("El código alfanumérico no está bien escrito.");
                                 }
                                 break;
                             case '2':
@@ -303,7 +278,6 @@ public class GestionOS {
                                 }
                                 break;
                             case '3':
-                                //Aqui hay dudas, que devuelvo?
                                 boolean salir5 = false;
                                 do {
                                     System.out.print("Mostrando Pedidos pendientes de envio...\n");
