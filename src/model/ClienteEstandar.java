@@ -11,7 +11,7 @@ public class ClienteEstandar extends Cliente {
 
     @Override
     public String tipoCliente(){
-        return "ClienteEstandar";
+        return "Estandar";
 
     }
 

@@ -81,6 +81,7 @@ public class Controlador {
     public boolean addPedido(int numero_pedido, String email, String articulo, int numero_de_articulos, LocalDateTime fecha) {
         if (datos.existeCliente(email) == true){
             datos.addPedidos(numero_pedido, email, articulo, numero_de_articulos, fecha);
+            return true;
         }
         return false;
     }

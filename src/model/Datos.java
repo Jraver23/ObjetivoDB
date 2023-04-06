@@ -112,7 +112,7 @@ public class Datos {
 
     public String ListasClientesP() {
         Collection<Cliente> ListasClientesP = listaClientes.getArrayList().stream().filter(cliente -> cliente.tipoCliente().equals("Premium")).collect(Collectors.toCollection(ArrayList::new));
-        return listaClientes.toString();
+        return ListasClientesP.toString();
     }
     //Metodo para obtener un cliente con email
     public Cliente getCliente(String email) {
@@ -166,10 +166,10 @@ public class Datos {
     }
 
     public String ListadoPPE(){
-    ArrayList<Pedidos>listaPedidosPendientes=new ArrayList<>();
+    ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>();
     for(Pedidos pedidos:listaPedidos.lista){
         if(!pedidos.pedidoEnviado() &&pedidos.cliente instanceof ClienteEstandar){
-            listaPedidosPendientes.toString();
+            listaPedidosPendientes.add(pedidos);
         }
     }
     return listaPedidosPendientes.toString();
