@@ -96,8 +96,7 @@ public class Articulo_DAO {
             System.out.println("Error al ejecutar el update " + e);
         }
     }
-
-    @Override
+    
     public void delete(Articulo articulo) {
         try {
             PreparedStatement ps = getStatement(delete);
