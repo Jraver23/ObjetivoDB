@@ -8,7 +8,7 @@ import model.ClientePremium;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class Cliente_DAO {
+public class Cliente_DAO implements DAO<Cliente, String> {
 
     connectionDAO Manager = new connectionDAO();
     private String select = "SELECT * FROM cliente WHERE email=?;";
@@ -39,7 +39,7 @@ public class Cliente_DAO {
         }
     }
 
-
+    @Override
     public Cliente select(String s) {
         try {
             PreparedStatement ps = getStatement(select);
@@ -72,7 +72,7 @@ public class Cliente_DAO {
     }
 
 
-
+    @Override
     public void insert(Cliente cliente) {
         try {
             PreparedStatement ps = getStatement(insert);
@@ -90,7 +90,7 @@ public class Cliente_DAO {
         }
     }
 
-
+    @Override
     public void update(Cliente cliente) {
         try {
             PreparedStatement ps = getStatement(update);
@@ -108,7 +108,7 @@ public class Cliente_DAO {
         }
     }
 
-
+    @Override
     public void delete(Cliente cliente) {
         try {
             PreparedStatement ps = getStatement(delete);
@@ -123,7 +123,7 @@ public class Cliente_DAO {
     }
 
 
-
+    @Override
     public ArrayList<Cliente> selectall() {
         ArrayList<Cliente> clientes = new ArrayList();
         try {
@@ -156,7 +156,5 @@ public class Cliente_DAO {
             return null;
         }
     }
-
-
 }
 

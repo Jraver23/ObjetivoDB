@@ -5,7 +5,7 @@ import model.Articulo;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class Articulo_DAO {
+public class Articulo_DAO implements DAO<Articulo, String> {
     connectionDAO Manager = new connectionDAO();
     private String select = "SELECT * FROM articulo WHERE codigo=?;";
     private String insert = "INSERT INTO articulo (codigo, descripcion, precio_venta, gestion_envio, tiempo_preparacion) VALUES (?, ?, ?, ?, ?);";
@@ -35,7 +35,7 @@ public class Articulo_DAO {
         }
     }
 
-
+    @Override
     public Articulo select(String s) {
         try {
             PreparedStatement ps = getStatement(select);
@@ -61,7 +61,7 @@ public class Articulo_DAO {
     }
 
 
-
+    @Override
     public void insert(Articulo articulo) {
         try {
             PreparedStatement ps = getStatement(insert);
@@ -79,7 +79,7 @@ public class Articulo_DAO {
         }
     }
 
-
+    @Override
     public void update(Articulo articulo) {
         try {
             PreparedStatement ps = getStatement(update);
@@ -96,7 +96,7 @@ public class Articulo_DAO {
             System.out.println("Error al ejecutar el update " + e);
         }
     }
-    
+    @Override
     public void delete(Articulo articulo) {
         try {
             PreparedStatement ps = getStatement(delete);
@@ -111,7 +111,7 @@ public class Articulo_DAO {
     }
 
 
-
+    @Override
     public ArrayList<Articulo> selectall() {
         ArrayList<Articulo> articulos = new ArrayList();
         try {
@@ -133,6 +133,4 @@ public class Articulo_DAO {
             return null;
         }
     }
-
-
 }
