@@ -22,7 +22,13 @@ public class connectionDAO {
 
     //Generamos el constructor
     public connectionDAO() {
-        this.connection = getConnection();
+        try {
+            this.connection = getConnection();
+        } catch (SQLDataException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     //Agregación de capsula throw para indicar que el metodo puede arrojar excepciones SQLException
@@ -57,7 +63,7 @@ public class connectionDAO {
 
     public Cliente_DAO getCliente_dao(){
         if (cliente_dao == null){
-            articulo_dao = new Cliente_DAO(connection);
+            cliente_dao = new Cliente_DAO(connection);
         }
         return cliente_dao;
     }
