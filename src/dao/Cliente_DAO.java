@@ -146,10 +146,10 @@ public class Cliente_DAO implements DAO<Cliente, String> {
                 else {
                     return null;
                 }
+                clientes.add(cliente);
             }
-            clientes.add(cliente);
             ps.close();
-            return null;
+            return clientes;
         }
         catch (SQLException e) {
             System.out.println("Error al seleccionar " + e);
