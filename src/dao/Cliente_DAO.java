@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Cliente_DAO implements DAO<Cliente, String> {
 
-    connectionDAO Manager = new connectionDAO();
+    ConexionBD Manager = new ConexionBD();
     private String select = "SELECT * FROM cliente WHERE email=?;";
     private String insert = "INSERT INTO cliente (nombre, domicilio, nif, email, tipo_cliente) VALUES (?, ?, ?, ?, ?);";
     private String update = "UPDATE cliente SET nombre=?, domicilio=?, nif=?, email=? WHERE tipo_cliente=?;";
@@ -21,12 +21,12 @@ public class Cliente_DAO implements DAO<Cliente, String> {
 
     public Cliente_DAO(Connection connection) {
         try {
-            this.connection = Manager.getConnection();
-        } catch (SQLDataException e) {
+            this.connection= Manager.getConnection();
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        } //catch (ClassNotFoundException e) {
+            //e.printStackTrace();
+
     }
 
     public PreparedStatement getStatement(String query) {
