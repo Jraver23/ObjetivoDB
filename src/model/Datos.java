@@ -1,6 +1,7 @@
 package model;
 
-import dao.connectionDAO;
+import dao.ConexionBD;
+//import dao.connectionDAO;
 import java.util.stream.Collectors;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -14,13 +15,13 @@ public class Datos {
     private String codigoA;
     private Lista<Pedidos> listaPedidosPendientes;
 
-    private connectionDAO daoManager = new connectionDAO();
+    private ConexionBD daoManager = new ConexionBD();
 
     //Constructor publico, inicializa los atributos
     public Datos() {
-       /* listaArticulos = new ListaArticulos();
+       listaArticulos = new ListaArticulos();
         listaClientes = new ListaClientes();
-        listaPedidos = new ListaPedidos();*/
+        listaPedidos = new ListaPedidos();
     }
 
     // GESTIÓN DE ARTICULOS
@@ -127,7 +128,7 @@ public class Datos {
 
     public String ListaClientes() {
         return daoManager.getCliente_dao().selectall().toString();
-    }
+        }
 
     public String ListaClientesEstandar() {
         ArrayList<ClienteEstandar> clientesEstandar = new ArrayList<>();
@@ -137,7 +138,7 @@ public class Datos {
             }
         }
         return clientesEstandar.toString();
-       /* Collection<Cliente> listaClientesEstandar = listaClientes.getArrayList().stream().filter(cliente -> cliente.tipoCliente().equals("Estandar")).collect(Collectors.toCollection(ArrayList::new));
+        /*Collection<Cliente> listaClientesEstandar = listaClientes.getArrayList().stream().filter(cliente -> cliente.tipoCliente().equals("Estandar")).collect(Collectors.toCollection(ArrayList::new));
         return listaClientesEstandar.toString();*/
     }
 
@@ -189,8 +190,8 @@ public class Datos {
     public void addPedidos (int numero_pedido, String email, String codigoA, int numero_de_articulo, LocalDateTime fecha){
         Pedidos pedido;
         //Se obtienen el Cliente y el Artículo por sus identificadores únicos
-        Cliente cliente = getCliente(email);
-        Articulo articulo = getArticulo(codigoA);
+        Cliente cliente = daoManager.getCliente_dao().select(email);
+        Articulo articulo = daoManager.getArticulo_dao().select(codigoA);
         //Se agrega el pedido de acuerdo a su método constructor
         pedido = new Pedidos(numero_pedido, cliente, articulo, numero_de_articulo, fecha);
         daoManager.getPedido_dao().insert(pedido);

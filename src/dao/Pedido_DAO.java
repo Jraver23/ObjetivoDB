@@ -47,7 +47,6 @@ public class Pedido_DAO implements DAO<Pedidos, Integer>{
             ps.setTimestamp(5, java.sql.Timestamp.valueOf(pedido.getFecha()));
             ps.executeUpdate();
             ps.close();
-
         }
         catch (SQLException e) {
             System.out.println("Error al insertar " + e);
