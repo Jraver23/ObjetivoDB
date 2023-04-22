@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class Articulo_DAO implements DAO<Articulo, String> {
-    connectionDAO Manager = new connectionDAO();
+    ConexionBD Manager = new ConexionBD();
     private String select = "SELECT * FROM articulo WHERE codigo=?;";
     private String insert = "INSERT INTO articulo (codigo, descripcion, precio_venta, gestion_envio, tiempo_preparacion) VALUES (?, ?, ?, ?, ?);";
     private String update = "UPDATE articulo SET descripcion=?, precio_venta=?, gestion_envio=?, tiempo_preparacion=? WHERE codigo=?;";
@@ -18,12 +18,12 @@ public class Articulo_DAO implements DAO<Articulo, String> {
     public Articulo_DAO(Connection connection) {
         try {
             this.connection = Manager.getConnection();
-        } catch (SQLDataException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } //catch (ClassNotFoundException e) {
+            //e.printStackTrace();
         }
-    }
+
 
     public PreparedStatement getStatement(String query) {
         try {

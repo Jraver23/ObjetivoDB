@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Pedido_DAO implements DAO<Pedidos, Integer>{
 
-    connectionDAO Manager = new connectionDAO();
+    ConexionBD Manager = new ConexionBD();
     private String select = "SELECT * FROM pedido WHERE numero_pedido=?;";
     private String insert = "INSERT INTO pedido (numero_pedido, email_cliente, codigo_articulo, numero_articulo, fecha) VALUES (?, ?, ?, ?, ?);";
     private String update = "UPDATE pedido SET email_cliente=?, codigo_articulo=?, numero_articulo=?, fecha=? WHERE numero_pedido=?;";
@@ -20,11 +20,11 @@ public class Pedido_DAO implements DAO<Pedidos, Integer>{
     public Pedido_DAO(Connection connection) {
         try {
             this.connection = Manager.getConnection();
-        } catch (SQLDataException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        } //catch (ClassNotFoundException e) {
+            //e.printStackTrace();
+
     }
 
     public PreparedStatement getStatement(String query) {
