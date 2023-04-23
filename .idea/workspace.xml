@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/Cliente_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Cliente_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/Pedido_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Pedido_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Datos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Datos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Datos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Datos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GestionOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GestionOS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ObjetivoDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ObjetivoDB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ConexionBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ConexionBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/ConexionBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ConexionBD.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
