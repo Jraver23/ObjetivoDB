@@ -7,7 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <content url="jar://$MODULE_DIR$/../../../Escritorio/POO con BBDD/Producto 3/Driver jdbc/mysql-connector-j-8.0.32.jar!/" />
+    <content url="jar://$USER_HOME$/Escritorio/POO con BBDD/Producto 3/Driver jdbc/mysql-connector-j-8.0.32.jar!/" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
@@ -24,11 +24,12 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/POO con BBDD/Producto 3/Driver jdbc/mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar!/" />
+          <root url="jar://$USER_HOME$/Escritorio/POO con BBDD/Producto 3/Driver jdbc/mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mysql-connector-j-8.0.33" level="project" />
   </component>
 </module>

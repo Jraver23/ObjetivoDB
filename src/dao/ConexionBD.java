@@ -13,7 +13,7 @@ public class  ConexionBD {
     private String driver = "com.mysql.cj.jdbc.Driver";
     private String url = "jdbc:mysql://localhost:3306/objetivodb";
     private String username = "root";
-    private String password = "1888";
+    private String password = "";
 
     private Articulo_DAO articulo_dao = null;
     private Cliente_DAO cliente_dao = null;
@@ -51,7 +51,7 @@ public class  ConexionBD {
 
         public Pedido_DAO getPedido_dao () {
             if (pedido_dao == null) {
-
+                pedido_dao = new Pedido_DAO(connection);
             }
             return pedido_dao;
         }
