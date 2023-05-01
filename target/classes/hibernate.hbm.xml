@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="modelo.Articulo" table="articulo">
+        <id name="codigo" type="string" column="codigo">
+        </id>
+
+        <property name="descripcion" column="descripcion" type="string"/>
+        <property name="precio_venta" column="precio_venta" type="float"/>
+        <property name="gastos_envio" column="gastos_envio" type="float"/>
+        <property name="tiempo_preparacion" column="tiempo_preparacion" type="long"/>
+    </class>
+
+    <class name="modelo.Cliente" table="cliente" discriminator-value="TYPE" abstract="true">
+        <id name="email" type="string" column="email"></id>
+        <discriminator column="tipoCliente" type="string"/>
+
+        <property name="nombre" column="nombre" type="string"/>
+        <property name="domicilio" column="domicilio" type="string"/>
+        <property name="nif" column="nif" type="string"/>
+
+
+        <subclass name="modelo.ClienteEstandar" discriminator-value="Estandar">
+        </subclass>
+
+        <subclass name="modelo.ClientePremium" discriminator-value="Premium">
+        </subclass>
+
+
+    </class>
+
+
+    <class name="modelo.Pedido" table="pedido">
+        <id name="numero" type="int" column="numero"></id>
+        <property name="unidades" column="unidades" type="int"/>
+        <property name="fecha" column="fecha" type="LocalDateTime"/>
+        <many-to-one name="cliente" class="modelo.Cliente" column="emailCliente" not-null="true"/>
+        <many-to-one name="articulo" class="modelo.Articulo" column="codigoArticulo" not-null="true"/>
+
+    </class>
+
+
+
+
+</hibernate-mapping>
