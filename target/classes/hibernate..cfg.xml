@@ -14,7 +14,7 @@
             root
         </property>
         <property name="connection.password">
-            1888
+
         </property>
         <property name="connection.driver_class">
             com.mysql.cj.jdbc.Driver

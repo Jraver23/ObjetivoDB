@@ -20,140 +20,34 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/Escritorio/POO con BBDD/Producto 3/Driver jdbc/mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="mysql-connector-j-8.0.33" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/antlr-2.7.7.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/antlr-2.7.7.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/byte-buddy-1.12.7.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/classmate-1.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/FastInfoset-1.2.15.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/hibernate-commons-annotations-5.1.2.Final.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/hibernate-core-5.6.4.Final.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/istack-commons-runtime-3.0.7.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jandex-2.4.2.Final.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/javax.activation-api-1.2.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/javax.persistence-api-2.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jaxb-api-2.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jaxb-runtime-2.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jboss-logging-3.4.3.Final.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/stax-ex-1.8.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/txw2-2.3.1.jar!/" />
+          <root url="file://$MODULE_DIR$" />
+          <root url="file://$MODULE_DIR$" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/classmate-1.3.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/dom4j-1.6.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/hibernate-commons-annotations-5.0.1.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/hibernate-core-5.2.11.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/javassist-3.20.0-GA.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/jboss-annotations-api_1.2_spec-1.0.0.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/jboss-jms-api_2.0_spec-1.0.0.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/jboss-logging-3.3.0.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/jboss-transaction-api_1.2_spec-1.0.0.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/lucene-core-5.5.4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/lucene-queryparser-5.5.4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Escritorio/lib/xml-apis-1.3.03.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/src" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
