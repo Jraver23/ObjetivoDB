@@ -11,11 +11,8 @@
   <url>http://maven.apache.org</url>
 
 
-  <properties>
-  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>18</maven.compiler.source>
-    <maven.compiler.target>18</maven.compiler.target>
-  </properties>
+  <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+
 
   <dependencies>
     <dependency>
@@ -26,7 +23,7 @@
     </dependency>
 
     <!-- JAXB RI -->
-    <dependency>
+   <dependency>
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-impl</artifactId>
       <version>2.3.4</version>
@@ -39,5 +36,9 @@
     </dependency>
   </dependencies>
 
+  <properties>
+    <maven.compiler.source>18</maven.compiler.source>
+    <maven.compiler.target>18</maven.compiler.target>
+  </properties>
 
 </project>
