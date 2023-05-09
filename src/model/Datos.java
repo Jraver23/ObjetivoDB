@@ -1,63 +1,110 @@
 package model;
 
 import dao.ConexionBD;
+
 //import dao.connectionDAO;
+import java.io.Serializable;
 import java.util.stream.Collectors;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+//import com.mysql.cj.Session;
+
+
+
 public class Datos {
 
     //Definición de atributos privados
-    private ListaArticulos listaArticulos;
+   /* private ListaArticulos listaArticulos;
     private ListaClientes listaClientes;
-    private ListaPedidos listaPedidos;
+    private ListaPedidos listaPedidos;*/
     private String codigoA;
-    private Lista<Pedidos> listaPedidosPendientes;
+    //private Lista<Pedidos> listaPedidosPendientes;
 
-    private ConexionBD daoManager = new ConexionBD();
+    // private ConexionBD daoManager = new ConexionBD();
 
     //Constructor publico, inicializa los atributos
     public Datos() {
-       listaArticulos = new ListaArticulos();
+      /* listaArticulos = new ListaArticulos();
         listaClientes = new ListaClientes();
-        listaPedidos = new ListaPedidos();
+        listaPedidos = new ListaPedidos();*/
     }
 
     // GESTIÓN DE ARTICULOS
     //Definición del metodo 'existeArticulo' se comprueba si la lista esta vacia, si es si nos devuleve un 'false'
     public boolean existeArticulo(String codigoA) {
-        if (!(daoManager.getArticulo_dao().select(codigoA) == null)){
+
+        Articulo articulo = null;
+        Transaction transaction = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            transaction = session.beginTransaction();
+            articulo = (Articulo)session.get(Articulo.class,codigoA);
+
+        }catch (HibernateException e){
+            if(transaction!= null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally{
+            session.close();
+        }
+        if(articulo==null){
+            return false;
+        } else{
             return true;
         }
-        return false;
-      /*  if (listaArticulos.isEmpty() == true) {
-            return false;
-        }
-        //El ciclo 'for' itera sobre todos los elementos, al conseguir el codigo del articulo lo compara con el parametro proporcionado
-        //Recorre la lista si no encuentra comparacion el articulo no existe
-        for (int i = 0; i < listaArticulos.getSize(); i++) {
-            int resultado = listaArticulos.getAt(i).getCodigoalfanumerico().compareTo(codigoA);
-            if (resultado == 0) {
-                return true;
-            }
-        }
-        return false;*/
     }
 
     //El metodo 'add.Articulo' coge los parametros y los utiliza para crear un nuevo articulo
     //Cuando lo crea lo pone en la lista de articulos
     public void addArticulo(String codigoA, String descripcionA, float precio_de_venta, float gastos_de_envio, long tiempo_de_preparacion) {
-        Articulo articulo;
-        articulo = new Articulo(codigoA, descripcionA, precio_de_venta, gastos_de_envio, tiempo_de_preparacion);
-        daoManager.getArticulo_dao().insert(articulo);
-        /*  Articulo articulo;
-        articulo = new Articulo(codigoA, descripcionA, precio_de_venta, gastos_de_envio, tiempo_de_preparacion);
-        listaArticulos.add(articulo);*/
+        Articulo articulo = new Articulo(codigoA,descripcionA,precio_de_venta,gastos_de_envio,tiempo_de_preparacion);
+
+        Transaction transaction = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            transaction = session.beginTransaction();
+
+            session.save(articulo);
+
+            transaction.commit();
+
+        }catch (HibernateException e){
+            if(transaction!= null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally{
+            session.close();
+        }
     }
 
     public String listaA() {
-        return daoManager.getArticulo_dao().selectall().toString();
+        //Como se hace?
+        ArrayList<Articulo> listArticulos = new ArrayList<>();
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            Query<Articulo> query = session.createQuery("from Articulo", Articulo.class);
+            listArticulos = (ArrayList<Articulo>) query.getResultList();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return listArticulos.toString();
+        /* return daoManager.getArticulo_dao().selectall().toString();*/
         //return this.listaArticulos.toString();
     }
 
@@ -65,25 +112,30 @@ public class Datos {
     //GESTIÓN DE CLIENTES
     //En este metodo comienza con verificar si la lista de clientes esta vacia
     public boolean existeCliente(String emailC) {
-        if (!(daoManager.getCliente_dao().select(emailC)==null)){
+        Cliente cliente = null;
+        Transaction transaction = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            transaction = session.beginTransaction();
+            cliente = (Cliente)session.get(Cliente.class,emailC);
+
+        }catch (HibernateException e){
+            if(transaction!= null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally{
+            session.close();
+        }
+        if(cliente==null){
+            return false;
+        } else{
             return true;
         }
-        return false;
-        /*
-        if (listaClientes.isEmpty() == true) {
-            return false;
-        }
-        //En este ciclo si el email coincide lo compara con el parametro insertado > muestra
-        for (int i = 0; i < listaClientes.getSize(); i++) {
-            int resultado = listaClientes.getAt(i).getEmail().compareTo(emailC);
-            if (resultado == 0) {
-                return true;
-            }
-        }
-        return false;*/
     }
 
     public void addClienteToAList(String nombre, String domicilio, String nif, String email, String tipoCliente) {
+
         Cliente cliente=null;
         if (tipoCliente.compareTo("Estandar")==0) {
             cliente = new ClienteEstandar(nombre, domicilio, nif, email);
@@ -91,20 +143,28 @@ public class Datos {
         else if (tipoCliente.compareTo("Premium")==0) {
             cliente = new ClientePremium(nombre, domicilio, nif, email);
         }
-        daoManager.getCliente_dao().insert(cliente);
+        Transaction transaction = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            transaction = session.beginTransaction();
 
-        /* Cliente cliente;
-        if (tipoCliente.compareTo("Estandar") == 0) {
-            cliente = new ClienteEstandar(nombre, domicilio, nif, email);
-            listaClientes.add(cliente);
-        } else if (tipoCliente.compareTo("Premium") == 0) {
-            cliente = new ClientePremium(nombre, domicilio, nif, email);
-            listaClientes.add(cliente);
-        }*/
+            session.save(cliente);
+
+            transaction.commit();
+
+        }catch (HibernateException e){
+            if(transaction!= null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally{
+            session.close();
+        }
+
     }
 
 
-    public void cargaDatos() {
+   /* public void cargaDatos() {
         ClienteEstandar cliente1 = new ClienteEstandar("Nordine", "BarcelonaCity", "3625147Z", "nordine@uoc.com");
         listaClientes.add(cliente1);
         ClientePremium cliente2 = new ClientePremium("Sergi", "BadalonaCity", "5654128H", "sergi@uoc.com");
@@ -124,56 +184,99 @@ public class Datos {
         listaPedidos.add(pedidos2);
         listaPedidos.add(pedidos3);
         System.out.println("Los datos han sido cargados correctamente");
-    }
+    }*/
 
     public String ListaClientes() {
-        return daoManager.getCliente_dao().selectall().toString();
+        ArrayList<Cliente> listClientes = new ArrayList<>();
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            Query<Cliente> query = session.createQuery("from Cliente", Cliente.class);
+            listClientes = (ArrayList<Cliente>) query.getResultList();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
         }
 
+        return listClientes.toString();
+
+    }
+
     public String ListaClientesEstandar() {
-        ArrayList<ClienteEstandar> clientesEstandar = new ArrayList<>();
-        for (Cliente cliente:daoManager.getCliente_dao().selectall()){
-            if (cliente.tipoCliente().equals("Estandar")){
-                clientesEstandar.add((ClienteEstandar) cliente);
-            }
+        ArrayList<ClienteEstandar> listaClientesEstandar = new ArrayList<>();
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            Query<ClienteEstandar> query = session.createQuery("from ClienteEstandar", ClienteEstandar.class);
+            listaClientesEstandar = (ArrayList<ClienteEstandar>) query.getResultList();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
         }
-        return clientesEstandar.toString();
-        /*Collection<Cliente> listaClientesEstandar = listaClientes.getArrayList().stream().filter(cliente -> cliente.tipoCliente().equals("Estandar")).collect(Collectors.toCollection(ArrayList::new));
-        return listaClientesEstandar.toString();*/
+
+        return listaClientesEstandar.toString();
+
     }
 
     public String ListasClientesP() {
-        ArrayList<ClientePremium> clientesPremium = new ArrayList<>();
-        for (Cliente cliente:daoManager.getCliente_dao().selectall()){
-            if (cliente.tipoCliente().equals("Premium")){
-                clientesPremium.add((ClientePremium) cliente);
-            }
-        }
-        return clientesPremium.toString();
+        //nose si esto es correcto o no.
+        ArrayList<ClientePremium> listaClientesPremium = new ArrayList<>();
 
-        /*Collection<Cliente> ListasClientesP = listaClientes.getArrayList().stream().filter(cliente -> cliente.tipoCliente().equals("Premium")).collect(Collectors.toCollection(ArrayList::new));
-        return ListasClientesP.toString();*/
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            Query<ClientePremium> query = session.createQuery("from ClientePremium", ClientePremium.class);
+            listaClientesPremium = (ArrayList<ClientePremium>) query.getResultList();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return listaClientesPremium.toString();
+
     }
 
     //Metodo para obtener un cliente con email
     public Cliente getCliente(String email) {
 
-        return daoManager.getCliente_dao().select(email);
-        /*if (listaClientes.isEmpty() == true) {
-            return null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Cliente cliente = null;
+
+        try {
+            cliente = session.get(Cliente.class, email);
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
         }
-        for(int i=0; i<listaClientes.getSize(); i++){
-            Cliente cliente=listaClientes.getAt(i);
-        if(cliente.getEmail().equals(email)){
-            return cliente;
-        }
-        }
-        return null;*/
+
+        return cliente;
+
     }
+
 
     //Metodo para obtener un articulo con el codigo articulo
     public Articulo getArticulo(String codigoA){
-        return daoManager.getArticulo_dao().select(codigoA);
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Articulo articulo = null;
+
+        try {
+            articulo = session.get(Articulo.class, codigoA);
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return articulo;
+
+    }
+    //return daoManager.getArticulo_dao().select(codigoA);
 
    /* if (listaArticulos.isEmpty()==true){
         return null;
@@ -185,120 +288,139 @@ public class Datos {
         }
     }
     return null;*/
-}
+
 
     public void addPedidos (int numero_pedido, String email, String codigoA, int numero_de_articulo, LocalDateTime fecha){
-        Pedidos pedido;
-        //Se obtienen el Cliente y el Artículo por sus identificadores únicos
-        Cliente cliente = daoManager.getCliente_dao().select(email);
-        Articulo articulo = daoManager.getArticulo_dao().select(codigoA);
-        //Se agrega el pedido de acuerdo a su método constructor
-        pedido = new Pedidos(numero_pedido, cliente, articulo, numero_de_articulo, fecha);
-        daoManager.getPedido_dao().insert(pedido);
 
-        /*Pedidos pedidos;
-    //Da como resultado Cliente y Articulo por los parametros unicos
-        Cliente cliente=getCliente(email);
-        Articulo articulo=getArticulo(codigoA);
-    //Se agrega el pedido por su metodo constructor
-        pedidos=new Pedidos(numero_pedido, cliente, articulo, numero_de_articulo, fecha);
-        listaPedidos.add(pedidos);*/
+        Pedidos pedido;
+        Cliente cliente = getCliente(email);
+        Articulo articulo = getArticulo(codigoA);
+        pedido = new Pedidos(numero_pedido,cliente,articulo,numero_de_articulo,fecha);
+
+        Transaction transaction = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            transaction = session.beginTransaction();
+
+            session.save(pedido);
+
+            transaction.commit();
+
+        }catch (HibernateException e){
+            if(transaction!= null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally{
+            session.close();
+        }
     }
 
     public boolean eliminarP(int numero_pedido){
 
+        boolean resultado = false;
+        Transaction transaction = nul;
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
         try{
-            Pedidos pedido = daoManager.getPedido_dao().select(numero_pedido);
-            daoManager.getPedido_dao().delete(pedido);
-            return true;
-        }
-        catch(Exception e){
-            System.out.println("Error al eliminar");
-        }
-        return false;
-       /* if(listaPedidos.isEmpty()){
-            return false;
-        }
-        for(int i=0; i<listaPedidos.getSize();i++){
-            if(listaPedidos.getAt(i).numero_pedido == numero_pedido){
-                listaPedidos.borrar(listaPedidos.getAt(i));
-                return true;
+            transaction = session.beginTransaction();
+            Serializable id = new Integer(numero_pedido);
+            Object persistentInstance = session.load(Pedidos.class,id);
+
+            if(persistentInstance != null){
+                session.delete(persistentInstance);
+                transaction.commit();
+                resultado = true;
+
             }
+        }catch (HibernateException e){
+            if(transaction!= null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally{
+            session.close();
         }
-        return false;*/
+        return resultado;
     }
 
     public String ListadoPPE(){
-        ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>();
-        for(Pedidos pedido:daoManager.getPedido_dao().selectall()){
-            if (pedido.pedidoEnviado()==false && pedido.cliente instanceof ClienteEstandar){
-                listaPedidosPendientes.add(pedido);
-            }
-        }
-        return listaPedidosPendientes.toString();
 
-    /*ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>();
-    for(Pedidos pedidos:listaPedidos.lista){
-        if(!pedidos.pedidoEnviado() &&pedidos.cliente instanceof ClienteEstandar){
-            listaPedidosPendientes.add(pedidos);
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            Query<Pedidos> query = session.createQuery("from Pedido p where p.enviado = false and type(p.cliente) = ClienteEstandar", Pedidos.class);
+            ArrayList<Pedidos> resultado = (ArrayList<Pedidos>) query.getResultList();
+            ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>(resultado);
+            return listaPedidosPendientes.toString();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
         }
+
+        return null;
+
     }
-    return listaPedidosPendientes.toString();*/
-    }
+
+
+
     public String ListadoPPP(){
-        ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>();
-        for(Pedidos pedido:daoManager.getPedido_dao().selectall()){
-            if (pedido.pedidoEnviado()==false && pedido.cliente instanceof ClientePremium){
-                listaPedidosPendientes.add(pedido);
-            }
-        }
-        return listaPedidosPendientes.toString();
 
-        /*ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>();
-        for(Pedidos pedidos:listaPedidos.lista){
-            if(!pedidos.pedidoEnviado() && pedidos.cliente instanceof ClientePremium){
-                listaPedidosPendientes.add(pedidos);
-            }
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            Query<Pedidos> query = session.createQuery("from Pedido p where p.enviado = false and type(p.cliente) = ClientePremium", Pedidos.class);
+            ArrayList<Pedidos> resultado = (ArrayList<Pedidos>) query.getResultList();
+            ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>(resultado);
+            return listaPedidosPendientes.toString();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
         }
-        return listaPedidosPendientes.toString();*/
+
+        return null;
+
     }
     public String listadoPEE(){
-        ArrayList<Pedidos> listaPedidosEnviados = new ArrayList<>();
-        for(Pedidos pedido:daoManager.getPedido_dao().selectall()){
-            if (pedido.pedidoEnviado()==true && pedido.cliente instanceof ClienteEstandar){
-                listaPedidosEnviados.add(pedido);
-            }
-        }
-        return listaPedidosEnviados.toString();
+        Session session = HibernateUtil.getSessionFactory().openSession();
 
-        /*ArrayList<Pedidos> listaPedidosEnviados = new ArrayList<>();
-        for(Pedidos pedido:listaPedidos.lista){
-            if (pedido.pedidoEnviado()==true && pedido.cliente instanceof ClienteEstandar){
-                listaPedidosEnviados.add(pedido);
-            }
+        try {
+            Query<Pedidos> query = session.createQuery("from Pedido p where p.enviado = true and type(p.cliente) = ClienteEstandar", Pedidos.class);
+            ArrayList<Pedidos> resultado = query.getResultList();
+            ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>(resultado);
+            return listaPedidosPendientes.toString();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
         }
-        return listaPedidosEnviados.toString();*/
+
+        return null;
+
     }
 
     public String listadoPEP(){
 
-        ArrayList<Pedidos> listaPedidosEnviados = new ArrayList<>();
-        for(Pedidos pedido:daoManager.getPedido_dao().selectall()){
-            if (pedido.pedidoEnviado()==true && pedido.cliente instanceof ClientePremium){
-                listaPedidosEnviados.add(pedido);
-            }
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            Query<Pedidos> query = session.createQuery("from Pedido p where p.enviado = true and type(p.cliente) = ClientePremium", Pedidos.class);
+            ArrayList<Pedidos> resultado = (ArrayList<Pedidos>) query.getResultList();
+            ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>(resultado);
+            return listaPedidosPendientes.toString();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
         }
-        return listaPedidosEnviados.toString();
-        /*ArrayList<Pedidos> listaPedidosEnviados = new ArrayList<>();
-        for(Pedidos pedido:listaPedidos.lista){
-            if (pedido.pedidoEnviado()==true && pedido.cliente instanceof ClientePremium){
-                listaPedidosEnviados.add(pedido);
-            }
-        }
-        return listaPedidosEnviados.toString();*/
+
+        return null;
+
     }
 }
-
 
 
 
