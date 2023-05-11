@@ -164,7 +164,7 @@ public class Datos {
     }
 
 
-   /* public void cargaDatos() {
+   /*public void cargaDatos() {
         ClienteEstandar cliente1 = new ClienteEstandar("Nordine", "BarcelonaCity", "3625147Z", "nordine@uoc.com");
         listaClientes.add(cliente1);
         ClientePremium cliente2 = new ClientePremium("Sergi", "BadalonaCity", "5654128H", "sergi@uoc.com");
@@ -319,7 +319,7 @@ public class Datos {
     public boolean eliminarP(int numero_pedido){
 
         boolean resultado = false;
-        Transaction transaction = nul;
+        Transaction transaction = null;
 
         Session session = HibernateUtil.getSessionFactory().openSession();
 
@@ -389,7 +389,7 @@ public class Datos {
 
         try {
             Query<Pedidos> query = session.createQuery("from Pedido p where p.enviado = true and type(p.cliente) = ClienteEstandar", Pedidos.class);
-            ArrayList<Pedidos> resultado = query.getResultList();
+            ArrayList<Pedidos> resultado = (ArrayList<Pedidos>) query.getResultList();
             ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>(resultado);
             return listaPedidosPendientes.toString();
         } catch (HibernateException e) {

@@ -10,12 +10,8 @@
         <property name="connection.url">
             jdbc:mysql://localhost:3306/objetivodb
         </property>
-        <property name="connection.username">
-            root
-        </property>
-        <property name="connection.password">
-
-        </property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">Sirius01</property>
         <property name="connection.driver_class">
             com.mysql.cj.jdbc.Driver
         </property>
