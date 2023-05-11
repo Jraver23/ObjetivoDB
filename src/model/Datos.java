@@ -4,6 +4,7 @@ import dao.ConexionBD;
 
 //import dao.connectionDAO;
 import java.io.Serializable;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -90,20 +91,32 @@ public class Datos {
 
     public String listaA() {
         //Como se hace?
-        ArrayList<Articulo> listArticulos = new ArrayList<>();
+        String resultado ="";
 
+
+        Transaction tx = null;
+        //Get the session object.
         Session session = HibernateUtil.getSessionFactory().openSession();
-
-        try {
-            Query<Articulo> query = session.createQuery("from Articulo", Articulo.class);
-            listArticulos = (ArrayList<Articulo>) query.getResultList();
-        } catch (HibernateException e) {
+        try{
+            tx = session.beginTransaction();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Articulo> criteria = builder.createQuery(Articulo.class);
+            criteria.from(Articulo.class);
+            List<Articulo> entityList = session.createQuery(criteria).getResultList();
+            for (Articulo e : entityList) {
+                resultado =resultado.concat("\n" + e.toString());
+            }
+        }catch (HibernateException e) {
+            if(tx!=null){
+                //Roll back if any exception occurs.
+                tx.rollback();
+            }
             e.printStackTrace();
-        } finally {
+        }finally {
+            //Close hibernate session.
             session.close();
         }
-
-        return listArticulos.toString();
+        return resultado;
         /* return daoManager.getArticulo_dao().selectall().toString();*/
         //return this.listaArticulos.toString();
     }
@@ -187,69 +200,115 @@ public class Datos {
     }*/
 
     public String ListaClientes() {
-        ArrayList<Cliente> listClientes = new ArrayList<>();
+        String resultado ="";
 
+
+        Transaction tx = null;
+        //Get the session object.
         Session session = HibernateUtil.getSessionFactory().openSession();
-
-        try {
-            Query<Cliente> query = session.createQuery("from Cliente", Cliente.class);
-            listClientes = (ArrayList<Cliente>) query.getResultList();
-        } catch (HibernateException e) {
+        try{
+            tx = session.beginTransaction();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Cliente> criteria = builder.createQuery(Cliente.class);
+            criteria.from(Cliente.class);
+            List<Cliente> entityList = session.createQuery(criteria).getResultList();
+            for (Cliente e : entityList) {
+                resultado =resultado.concat("\n" + e.toString());
+            }
+        }catch (HibernateException e) {
+            if(tx!=null){
+                //Roll back if any exception occurs.
+                tx.rollback();
+            }
             e.printStackTrace();
-        } finally {
+        }finally {
+            //Close hibernate session.
             session.close();
         }
-
-        return listClientes.toString();
+        return resultado;
 
     }
 
     public String ListaClientesEstandar() {
-        ArrayList<ClienteEstandar> listaClientesEstandar = new ArrayList<>();
+        String resultado ="";
 
+
+        Transaction tx = null;
+        //Get the session object.
         Session session = HibernateUtil.getSessionFactory().openSession();
-
-        try {
-            Query<ClienteEstandar> query = session.createQuery("from ClienteEstandar", ClienteEstandar.class);
-            listaClientesEstandar = (ArrayList<ClienteEstandar>) query.getResultList();
-        } catch (HibernateException e) {
+        try{
+            tx = session.beginTransaction();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Cliente> criteria = builder.createQuery(Cliente.class);
+            criteria.from(Cliente.class);
+            List<Cliente> entityList = session.createQuery(criteria).getResultList();
+            for (Cliente e : entityList) {
+                if(e.tipoCliente().compareTo("Estandar")==0) {
+                    resultado =resultado.concat("\n" + e.toString());
+                }
+            }
+        }catch (HibernateException e) {
+            if(tx!=null){
+                //Roll back if any exception occurs.
+                tx.rollback();
+            }
             e.printStackTrace();
-        } finally {
+        }finally {
+            //Close hibernate session.
             session.close();
         }
-
-        return listaClientesEstandar.toString();
+        return resultado;
 
     }
 
     public String ListasClientesP() {
         //nose si esto es correcto o no.
-        ArrayList<ClientePremium> listaClientesPremium = new ArrayList<>();
+        String resultado ="";
 
+
+        Transaction tx = null;
+        //Get the session object.
         Session session = HibernateUtil.getSessionFactory().openSession();
-
-        try {
-            Query<ClientePremium> query = session.createQuery("from ClientePremium", ClientePremium.class);
-            listaClientesPremium = (ArrayList<ClientePremium>) query.getResultList();
-        } catch (HibernateException e) {
+        try{
+            tx = session.beginTransaction();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Cliente> criteria = builder.createQuery(Cliente.class);
+            criteria.from(Cliente.class);
+            List<Cliente> entityList = session.createQuery(criteria).getResultList();
+            for (Cliente e : entityList) {
+                if(e.tipoCliente().compareTo("Premium")==0) {
+                    resultado =resultado.concat("\n" + e.toString());
+                }
+            }
+        }catch (HibernateException e) {
+            if(tx!=null){
+                //Roll back if any exception occurs.
+                tx.rollback();
+            }
             e.printStackTrace();
-        } finally {
+        }finally {
+            //Close hibernate session.
             session.close();
         }
-
-        return listaClientesPremium.toString();
+        return resultado;
 
     }
 
     //Metodo para obtener un cliente con email
     public Cliente getCliente(String email) {
 
+        Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         Cliente cliente = null;
 
         try {
+            tx = session.beginTransaction();
             cliente = session.get(Cliente.class, email);
         } catch (HibernateException e) {
+            if(tx!=null){
+                //Roll back if any exception occurs.
+                tx.rollback();
+            }
             e.printStackTrace();
         } finally {
             session.close();
@@ -263,11 +322,17 @@ public class Datos {
     //Metodo para obtener un articulo con el codigo articulo
     public Articulo getArticulo(String codigoA){
         Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = null;
         Articulo articulo = null;
 
         try {
+            tx = session.beginTransaction();
             articulo = session.get(Articulo.class, codigoA);
         } catch (HibernateException e) {
+            if(tx!=null){
+                //Roll back if any exception occurs.
+                tx.rollback();
+            }
             e.printStackTrace();
         } finally {
             session.close();
@@ -347,20 +412,34 @@ public class Datos {
 
     public String ListadoPPE(){
 
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        String resultado ="";
 
-        try {
-            Query<Pedidos> query = session.createQuery("from Pedido p where p.enviado = false and type(p.cliente) = ClienteEstandar", Pedidos.class);
-            ArrayList<Pedidos> resultado = (ArrayList<Pedidos>) query.getResultList();
-            ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>(resultado);
-            return listaPedidosPendientes.toString();
-        } catch (HibernateException e) {
+
+        Transaction tx = null;
+        //Get the session object.
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            tx = session.beginTransaction();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Pedidos> criteria = builder.createQuery(Pedidos.class);
+            criteria.from(Pedidos.class);
+            List<Pedidos> entityList = session.createQuery(criteria).getResultList();
+            for (Pedidos e : entityList) {
+                if(e.pedidoEnviado()==false && e.getCliente().tipoCliente().compareTo("Estandard")==0 ) {
+                    resultado =resultado.concat("\n" + e.toString());
+                }
+            }
+        }catch (HibernateException e) {
+            if(tx!=null){
+                //Roll back if any exception occurs.
+                tx.rollback();
+            }
             e.printStackTrace();
-        } finally {
+        }finally {
+            //Close hibernate session.
             session.close();
         }
-
-        return null;
+        return resultado;
 
     }
 
@@ -368,57 +447,99 @@ public class Datos {
 
     public String ListadoPPP(){
 
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        String resultado ="";
 
-        try {
-            Query<Pedidos> query = session.createQuery("from Pedido p where p.enviado = false and type(p.cliente) = ClientePremium", Pedidos.class);
-            ArrayList<Pedidos> resultado = (ArrayList<Pedidos>) query.getResultList();
-            ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>(resultado);
-            return listaPedidosPendientes.toString();
-        } catch (HibernateException e) {
+
+        Transaction tx = null;
+        //Get the session object.
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            tx = session.beginTransaction();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Pedidos> criteria = builder.createQuery(Pedidos.class);
+            criteria.from(Pedidos.class);
+            List<Pedidos> entityList = session.createQuery(criteria).getResultList();
+            for (Pedidos e : entityList) {
+                if(e.pedidoEnviado()==false && e.getCliente().tipoCliente().compareTo("Premium")==0 ) {
+                    resultado =resultado.concat("\n" + e.toString());
+                }
+            }
+        }catch (HibernateException e) {
+            if(tx!=null){
+                //Roll back if any exception occurs.
+                tx.rollback();
+            }
             e.printStackTrace();
-        } finally {
+        }finally {
+            //Close hibernate session.
             session.close();
         }
-
-        return null;
+        return resultado;
 
     }
     public String listadoPEE(){
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        String resultado ="";
 
-        try {
-            Query<Pedidos> query = session.createQuery("from Pedido p where p.enviado = true and type(p.cliente) = ClienteEstandar", Pedidos.class);
-            ArrayList<Pedidos> resultado = (ArrayList<Pedidos>) query.getResultList();
-            ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>(resultado);
-            return listaPedidosPendientes.toString();
-        } catch (HibernateException e) {
+
+        Transaction tx = null;
+        //Get the session object.
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            tx = session.beginTransaction();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Pedidos> criteria = builder.createQuery(Pedidos.class);
+            criteria.from(Pedidos.class);
+            List<Pedidos> entityList = session.createQuery(criteria).getResultList();
+            for (Pedidos e : entityList) {
+                if(e.pedidoEnviado()==true && e.getCliente().tipoCliente().compareTo("Estandard")==0 ) {
+                    resultado =resultado.concat("\n" + e.toString());
+                }
+            }
+        }catch (HibernateException e) {
+            if(tx!=null){
+                //Roll back if any exception occurs.
+                tx.rollback();
+            }
             e.printStackTrace();
-        } finally {
+        }finally {
+            //Close hibernate session.
             session.close();
         }
-
-        return null;
+        return resultado;
+    }
 
     }
 
     public String listadoPEP(){
 
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        String resultado ="";
 
-        try {
-            Query<Pedidos> query = session.createQuery("from Pedido p where p.enviado = true and type(p.cliente) = ClientePremium", Pedidos.class);
-            ArrayList<Pedidos> resultado = (ArrayList<Pedidos>) query.getResultList();
-            ArrayList<Pedidos> listaPedidosPendientes = new ArrayList<>(resultado);
-            return listaPedidosPendientes.toString();
-        } catch (HibernateException e) {
+
+        Transaction tx = null;
+        //Get the session object.
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            tx = session.beginTransaction();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Pedidos> criteria = builder.createQuery(Pedidos.class);
+            criteria.from(Pedidos.class);
+            List<Pedidos> entityList = session.createQuery(criteria).getResultList();
+            for (Pedidos e : entityList) {
+                if(e.pedidoEnviado()==true && e.getCliente().tipoCliente().compareTo("Premium")==0 ) {
+                    resultado =resultado.concat("\n" + e.toString());
+                }
+            }
+        }catch (HibernateException e) {
+            if(tx!=null){
+                //Roll back if any exception occurs.
+                tx.rollback();
+            }
             e.printStackTrace();
-        } finally {
+        }finally {
+            //Close hibernate session.
             session.close();
         }
-
-        return null;
-
+        return resultado;
     }
 }
 
