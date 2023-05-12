@@ -6,6 +6,8 @@ public class ClienteEstandar extends Cliente {
         super(nombre, domicilio, nif, email);
     }
 
+    public ClienteEstandar(){}
+
     // Aqui van los constructores y las caracteristicas de cliente estandar
 
 

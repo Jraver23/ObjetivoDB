@@ -6,7 +6,30 @@
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Datos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Datos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ObjetivoDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ObjetivoDB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/Articulo_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Articulo_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/Pedido_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Pedido_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ClienteEstandar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ClienteEstandar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ClientePremium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ClientePremium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Pedidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pedidos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/Articulo_DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/Articulo_DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/Cliente_DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/Cliente_DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/Pedido_DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/Pedido_DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Articulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Articulo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/ClienteEstandar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ClienteEstandar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/ClientePremium.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ClientePremium.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Datos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Datos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/HibernateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/HibernateUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Pedidos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Pedidos.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +55,18 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -47,34 +82,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/OneDrive/Business idea/GitHub/ObjetivoDB/META-INF/MANIFEST.MF&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.598&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Hibernaters-main" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\lib" />
       <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\Library" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sergi\Desktop\GIT\ObjetivoDB\src" />
       <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\META-INF" />
       <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB" />
       <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\METAINF" />
       <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\" />
-      <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\db" />
     </key>
   </component>
   <component name="RunManager" selected="Application.OnlineStore">

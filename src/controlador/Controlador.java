@@ -14,7 +14,7 @@ public class Controlador {
 
     public Controlador() {
         datos = new Datos();
-        datos.cargaDatos();
+        //datos.cargaDatos();
     }
 
     // Métodos que pasaran las listas de datos a la vista

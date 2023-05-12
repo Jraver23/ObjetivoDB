@@ -13,6 +13,10 @@ public abstract class Cliente {
         this.email = email;
     }
 
+    public Cliente(){
+
+    }
+
     public String getNombre() {
         return nombre;
     }

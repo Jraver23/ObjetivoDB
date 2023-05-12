@@ -6,6 +6,7 @@ public class ClientePremium extends Cliente {
         super(nombre, domicilio, nif, email);
     }
 
+    public ClientePremium(){}
     // Aqui van los constructores y las caracteristicas de cliente premium con sus ecuaciones
 
     @Override

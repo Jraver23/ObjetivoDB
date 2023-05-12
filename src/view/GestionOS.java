@@ -82,16 +82,15 @@ public class GestionOS {
                                     System.out.print("Escriba un tiempo de envio valido:\n");
                                     tiempo = Long.parseLong((teclado.nextLine()));
                                 }
-                                /*
+
                                 controlador.addArticuloToList(codigoalfanumerico,descripcion,precio_de_venta,gastos_de_envio,tiempo);
-                                No la uso, antigua funcionalidad que guardaba articulo en local
-                                 */
+
                                 //Conexion de articulo con la base de dato incluida en la conexionBD
-                                ConexionBD connection = new ConexionBD();
+                                /*ConexionBD connection = new ConexionBD();
                                 Articulo_DAO articulo_dao = new Articulo_DAO(connection.getConnection());
                                 Articulo articulo = new Articulo(codigoalfanumerico, descripcion, precio_de_venta, gastos_de_envio, tiempo);
 
-                                articulo_dao.insert(articulo);
+                                articulo_dao.insert(articulo);*/
                                 System.out.print("El articulo se ha guardado.\n");
                                 break;
                             case '2':

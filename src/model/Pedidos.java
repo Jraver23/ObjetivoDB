@@ -21,6 +21,8 @@ public class Pedidos {
         this.fecha = fecha;
     }
 
+    public Pedidos(){}
+
     public int getNumero_pedido() {
         return numero_pedido;
     }

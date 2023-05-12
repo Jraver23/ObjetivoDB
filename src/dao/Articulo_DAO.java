@@ -65,8 +65,8 @@ public class Articulo_DAO implements DAO<Articulo, String> {
     public void insert(Articulo articulo) {
         try {
             PreparedStatement ps = getStatement(insert);
-            ps.setString(1, articulo.getCodigoalfanumerico());
-            ps.setString(2, articulo.getDescripcion());
+            ps.setString(1, articulo.getCodigoA());
+            ps.setString(2, articulo.getDescripcionA());
             ps.setFloat(3, articulo.getPrecio_de_venta());
             ps.setFloat(4, articulo.getGastos_de_envio());
             ps.setLong(5, articulo.getTiempo_de_preparacion());
@@ -83,11 +83,11 @@ public class Articulo_DAO implements DAO<Articulo, String> {
     public void update(Articulo articulo) {
         try {
             PreparedStatement ps = getStatement(update);
-            ps.setString(1, articulo.getDescripcion());
+            ps.setString(1, articulo.getDescripcionA());
             ps.setFloat(2, articulo.getPrecio_de_venta());
             ps.setFloat(3, articulo.getGastos_de_envio());
             ps.setLong(4, articulo.getTiempo_de_preparacion());
-            ps.setString(5, articulo.getCodigoalfanumerico());
+            ps.setString(5, articulo.getCodigoA());
             ps.executeUpdate();
             ps.close();
 
@@ -100,7 +100,7 @@ public class Articulo_DAO implements DAO<Articulo, String> {
     public void delete(Articulo articulo) {
         try {
             PreparedStatement ps = getStatement(delete);
-            ps.setString(1, articulo.getCodigoalfanumerico());
+            ps.setString(1, articulo.getCodigoA());
             ps.executeUpdate();
             ps.close();
 
