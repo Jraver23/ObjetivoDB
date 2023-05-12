@@ -18,7 +18,8 @@ public class HibernateUtil {
             sessionFactory = configuration.buildSessionFactory();
         }
         catch (Exception e) {
-            System.out.println("Error: "+e);
+            System.out.println("Error al construir SessionFactory: " + e);
+            e.printStackTrace();
         }
         return sessionFactory;
     }

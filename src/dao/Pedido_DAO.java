@@ -42,7 +42,7 @@ public class Pedido_DAO implements DAO<Pedidos, Integer>{
             PreparedStatement ps = getStatement(insert);
             ps.setInt(1, pedido.getNumero_pedido());
             ps.setString(2, pedido.getCliente().getEmail());
-            ps.setString(3, pedido.getArticulo().getCodigoalfanumerico());
+            ps.setString(3, pedido.getArticulo().getCodigoA());
             ps.setFloat(4, pedido.getNumero_de_articulos());
             ps.setTimestamp(5, java.sql.Timestamp.valueOf(pedido.getFecha()));
             ps.executeUpdate();
@@ -58,7 +58,7 @@ public class Pedido_DAO implements DAO<Pedidos, Integer>{
         try {
             PreparedStatement ps = getStatement(update);
             ps.setString(1, pedido.getCliente().getEmail());
-            ps.setString(2, pedido.getArticulo().getCodigoalfanumerico());
+            ps.setString(2, pedido.getArticulo().getCodigoA());
             ps.setInt(3, pedido.getNumero_de_articulos());
             ps.setTimestamp(4, java.sql.Timestamp.valueOf(pedido.getFecha()));
             ps.setInt(5, pedido.getNumero_pedido());

@@ -5,39 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ObjetivoDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ObjetivoDB.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/Controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Datos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Datos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/GestionOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GestionOS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controlador/Controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controlador/Controlador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/Articulo_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Articulo_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/Pedido_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Pedido_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ClienteEstandar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ClienteEstandar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ClientePremium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ClientePremium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Pedidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pedidos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/Articulo_DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/Articulo_DAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/Cliente_DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/Cliente_DAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/ConexionBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ConexionBD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/Pedido_DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/Pedido_DAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate..cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Articulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Articulo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Cliente.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/ClienteEstandar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ClienteEstandar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/ClientePremium.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ClientePremium.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Datos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Datos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Lista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Lista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ListaArticulos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ListaArticulos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ListaClientes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ListaClientes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ListaPedidos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ListaPedidos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/HibernateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/HibernateUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Pedidos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Pedidos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/modelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/modelTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GestionOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GestionOS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/OnlineStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/OnlineStore.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

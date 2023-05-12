@@ -19,12 +19,16 @@ public class Articulo {
         this.tiempo_de_preparacion = tiempo;
     }
 
+    public Articulo() {
+
+    }
+
     // Getters
-    public String getCodigoalfanumerico() {
+    public String getCodigoA() {
         return codigoA;
     }
 
-    public String getDescripcion() {
+    public String getDescripcionA() {
         return descripcionA;
     }
 
@@ -41,11 +45,11 @@ public class Articulo {
     }
 
     // Setters
-    public void setCodigoalfanumerico(String codigo) {
+    public void setCodigoA(String codigo) {
         this.codigoA = codigo;
     }
 
-    public void setDescripcion(String descripcion) {
+    public void setDescripcionA(String descripcion) {
         this.descripcionA = descripcion;
     }
 

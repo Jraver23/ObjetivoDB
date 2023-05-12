@@ -4,17 +4,17 @@
 
 <hibernate-mapping>
 
-    <class name="modelo.Articulo" table="articulo">
-        <id name="codigo" type="string" column="codigo">
+    <class name="model.Articulo" table="articulo">
+        <id name="codigoA" type="string" column="codigo">
         </id>
 
-        <property name="descripcion" column="descripcion" type="string"/>
-        <property name="precio_venta" column="precio_venta" type="float"/>
-        <property name="gastos_envio" column="gestion_envio" type="float"/>
-        <property name="tiempo_preparacion" column="tiempo_preparacion" type="long"/>
+        <property name="descripcionA" column="descripcion" type="string"/>
+        <property name="precio_de_venta" column="precio_venta" type="float"/>
+        <property name="gastos_de_envio" column="gestion_envio" type="float"/>
+        <property name="tiempo_de_preparacion" column="tiempo_preparacion" type="long"/>
     </class>
 
-    <class name="modelo.Cliente" table="cliente" discriminator-value="TYPE" abstract="true">
+    <class name="model.Cliente" table="cliente" discriminator-value="TYPE" abstract="true">
         <id name="email" type="string" column="email"></id>
         <discriminator column="tipo_cliente" type="string"/>
 
@@ -23,22 +23,22 @@
         <property name="nif" column="nif" type="string"/>
 
 
-        <subclass name="modelo.ClienteEstandar" discriminator-value="Estandar">
+        <subclass name="model.ClienteEstandar" discriminator-value="Estandar">
         </subclass>
 
-        <subclass name="modelo.ClientePremium" discriminator-value="Premium">
+        <subclass name="model.ClientePremium" discriminator-value="Premium">
         </subclass>
 
 
     </class>
 
 
-    <class name="modelo.Pedidos" table="pedido">
+    <class name="model.Pedidos" table="pedido">
         <id name="numero_pedido" type="int" column="numero_pedido"></id>
         <property name="numero_de_articulos" column="numero_articulos" type="int"/>
         <property name="fecha" column="fecha" type="LocalDateTime"/>
-        <many-to-one name="cliente" class="modelo.Cliente" column="email_cliente" not-null="true"/>
-        <many-to-one name="articulo" class="modelo.Articulo" column="codigoArticulo" not-null="true"/>
+        <many-to-one name="cliente" class="model.Cliente" column="email" not-null="true"/>
+        <many-to-one name="articulo" class="model.Articulo" column="codigo" not-null="true"/>
 
     </class>
 
