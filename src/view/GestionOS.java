@@ -246,7 +246,7 @@ public class GestionOS {
                                     nif = teclado.nextLine();
                                     System.out.print("Escriba el mail del cliente (no debe existir en la BD):\n");
                                     email = teclado.nextLine();
-                                    System.out.print("Escriba el tipo de cliente. Puede ser ClienteEstandar o ClientePremium:\n");
+                                    System.out.print("Escriba el tipo de cliente. Puede ser Estandar o Premium:\n");
                                     tipoCliente = teclado.nextLine();
                                     controlador.addClienteToAList(nombre,domicilio,nif,email, tipoCliente);
                                 }

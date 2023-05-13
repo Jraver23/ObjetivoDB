@@ -77,9 +77,9 @@ public class Pedidos {
 
     public boolean pedidoEnviado() {
         if(fecha.plusDays(this.articulo.tiempo_de_preparacion).isBefore(LocalDateTime.now())) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
 

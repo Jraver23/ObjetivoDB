@@ -425,7 +425,7 @@ public class Datos {
             criteria.from(Pedidos.class);
             List<Pedidos> entityList = session.createQuery(criteria).getResultList();
             for (Pedidos e : entityList) {
-                if(e.pedidoEnviado()==false && e.getCliente().tipoCliente().compareTo("Estandard")==0 ) {
+                if(e.pedidoEnviado()==false && e.getCliente().tipoCliente().compareTo("Estandar")==0 ) {
                     resultado =resultado.concat("\n" + e.toString());
                 }
             }
@@ -491,7 +491,7 @@ public class Datos {
             criteria.from(Pedidos.class);
             List<Pedidos> entityList = session.createQuery(criteria).getResultList();
             for (Pedidos e : entityList) {
-                if(e.pedidoEnviado()==true && e.getCliente().tipoCliente().compareTo("Estandard")==0 ) {
+                if(e.pedidoEnviado()==true && e.getCliente().tipoCliente().compareTo("Estandar")==0 ) {
                     resultado =resultado.concat("\n" + e.toString());
                 }
             }
