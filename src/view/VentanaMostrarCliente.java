@@ -20,7 +20,7 @@ public class VentanaMostrarCliente implements Initializable {
     @FXML
     private TextArea ClientesP, ClientesE;
     @FXML
-    private Button Salir,Actualizar;
+    private Button Salir;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -42,7 +42,7 @@ public class VentanaMostrarCliente implements Initializable {
             Parent root = FXMLLoader.load(v.getClass().getResource("VentanaPrincipal.fxml"));
 
             Scene scene = new Scene(root);
-            stage.setTitle("ObjetivoDB");
+            stage.setTitle("ObjetivoDB - Menu Principal");
             stage.setScene(scene);
             stage.show();
         } catch ( IOException e) {

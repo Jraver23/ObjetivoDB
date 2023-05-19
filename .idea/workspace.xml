@@ -10,10 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/view/VentanaCrearCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/VentanaMostrarCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaCrearCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaCrearCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMostrarCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

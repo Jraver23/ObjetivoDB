@@ -41,7 +41,7 @@ public class VentanaPrincipal implements Initializable {
             Parent root = FXMLLoader.load(v.getClass().getResource("VentanaArticulos.fxml"));
 
             Scene scene = new Scene(root);
-            stage.setTitle("ObjetivoDB");
+            stage.setTitle("ObjetivoDB - Crear Articulo");
             stage.setScene(scene);
             stage.show();
         } catch ( IOException e) {
