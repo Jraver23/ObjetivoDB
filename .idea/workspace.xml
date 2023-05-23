@@ -10,10 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/JavaFX/javafx-swt.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/JavaFX/javafx.base.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/JavaFX/javafx.controls.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/JavaFX/javafx.fxml.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/JavaFX/javafx.graphics.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/JavaFX/javafx.media.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/JavaFX/javafx.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/JavaFX/javafx.swing.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/JavaFX/javafx.web.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaCrearCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaCrearCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMostrarCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ObjetivoDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ObjetivoDB.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -67,23 +79,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/JavaFX/javafx-sdk-20.0.1/lib",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.598"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\lib" />
       <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\Library" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\lib\JavaFX" />
       <recent name="C:\Users\sergi\Desktop\GIT\ObjetivoDB\src" />
       <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\META-INF" />
       <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB" />
       <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\METAINF" />
-      <recent name="C:\Users\Usuario\OneDrive\Business idea\GitHub\ObjetivoDB\" />
     </key>
   </component>
   <component name="RunManager" selected="Application.OnlineStore">
     <configuration name="OnlineStore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.OnlineStore" />
       <module name="ObjetivoDB" />
+      <option name="PROGRAM_PARAMETERS" value="--module-path /$PROJECT_DIR$/../../../../../../JavaFX/javafx-sdk-20.0.1/lib --add module javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="view.*" />
@@ -158,6 +179,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.OnlineStore" />
+      <item itemvalue="JUnit.modelTest.testGetNif" />
+      <item itemvalue="JUnit.modelTest.testGetNombre" />
+      <item itemvalue="JUnit.modelTest.testPedidoNoEnviado" />
+      <item itemvalue="JUnit.modelTest.testSetEmail" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.OnlineStore" />
