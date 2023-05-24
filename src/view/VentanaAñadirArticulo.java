@@ -11,10 +11,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
+import javafx.fxml.Initializable;
 
 
-//public class VentanaAñadirArticulo extends initializable{
-  public class VentanaAñadirArticulo implements initializable{
+
+public class VentanaAñadirArticulo extends Application{
 
         private Controlador controlador = new Controlador();
         @FXML
@@ -38,7 +39,7 @@ import java.io.IOException;
 
         @Override
         public void start(Stage primaryStage) throws IOException {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/añadirArticulo.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/VentanaAñadirArticulo.fxml"));
             primaryStage.setTitle("Añadir Artículo");
             primaryStage.setScene(new Scene(root, 570, 400));
             primaryStage.show();
@@ -58,7 +59,7 @@ import java.io.IOException;
                     "tiempo_preparacion: " + t_prep +
                     "}");
 
-            boolean posibleAr = controlador.addArticulo(cod, desc, prec_vent, gast_env, t_prep);
+            boolean posibleAr = controlador.addArticuloToList(cod, desc, prec_vent, gast_env, t_prep);
             if(posibleAr==true){
                 System.out.println("El articulo se ha añadido correctamente");
             }else{
@@ -67,4 +68,4 @@ import java.io.IOException;
         }
     }
 
-}
+

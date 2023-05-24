@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="view.VentanaAñadirArticulo" prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Label layoutX="133.0" layoutY="101.0" text="Código" />
+        <Label layoutX="133.0" layoutY="143.0" text="Descripción" />
+        <Label layoutX="131.0" layoutY="182.0" text="Precio de venta" />
+        <Label layoutX="130.0" layoutY="220.0" text="Gastos de envío" />
+        <Label layoutX="131.0" layoutY="260.0" text="Tiempo de preparación" />
+        <TextField fx:id="codigo" layoutX="313.0" layoutY="97.0" />
+        <TextField fx:id="descripcion" layoutX="313.0" layoutY="139.0" />
+        <TextField fx:id="precio_venta" layoutX="313.0" layoutY="178.0" />
+        <TextField fx:id="gastos_envio" layoutX="313.0" layoutY="216.0" />
+        <TextField fx:id="tiempo_preparacion" layoutX="313.0" layoutY="256.0" />
+        <Button layoutX="462.0" layoutY="328.0" mnemonicParsing="false" onAction="#agregarArtBtn" text="Agregar" />
+    </children>
+
+</AnchorPane>

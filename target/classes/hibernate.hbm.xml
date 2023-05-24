@@ -35,10 +35,10 @@
 
     <class name="model.Pedidos" table="pedido">
         <id name="numero_pedido" type="int" column="numero_pedido"></id>
-        <property name="numero_de_articulos" column="numero_articulos" type="int"/>
+        <property name="numero_de_articulos" column="numero_articulo" type="int"/>
         <property name="fecha" column="fecha" type="LocalDateTime"/>
-        <many-to-one name="cliente" class="model.Cliente" column="email" not-null="true"/>
-        <many-to-one name="articulo" class="model.Articulo" column="codigo" not-null="true"/>
+        <many-to-one name="cliente" class="model.Cliente" column="email_cliente" not-null="true"/>
+        <many-to-one name="articulo" class="model.Articulo" column="codigo_articulo" not-null="true"/>
 
     </class>
 

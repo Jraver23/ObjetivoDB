@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="view.VentanaMostrarArticulos" prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <TableView fx:id="tablaArticulos" layoutX="8.0" layoutY="6.0" prefHeight="350.0" prefWidth="550.0">
+            <columns>
+                <TableColumn fx:id="codigo" prefWidth="100.0" text="Codigo" />
+                <TableColumn fx:id="descripcion" prefWidth="100.0" text="Descripcion" />
+                <TableColumn fx:id="precio_venta" text="Precio Venta" />
+                <TableColumn fx:id="gastos_envio" prefWidth="100.0" text="Gastos Envio" />
+                <TableColumn fx:id="tiempo_preparacion" prefWidth="130.0" text="Tiempo preparacion" />
+            </columns>
+        </TableView>
+    </children>
+
+</AnchorPane>
