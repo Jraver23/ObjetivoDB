@@ -11,30 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaAñadirArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaAñadirArticulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaMenuArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMenuArticulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarArticulo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controlador/Controlador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/Articulo_DAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/Cliente_DAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/ConexionBD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/Pedido_DAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Articulo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Cliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ClienteEstandar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ClientePremium.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Datos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/HibernateUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Lista.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ListaArticulos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ListaClientes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ListaPedidos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Pedidos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/modelTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GestionOS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/OnlineStore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ObjetivoDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ObjetivoDB.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +78,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Usuario/OneDrive/Escritorio/POO con BBDD/Producto 5/Bonus/Producto 5_Lau/Hibernaters-main",
+    "last_opened_file_path": "C:/Users/enord/Desktop/JavaFX-20230525T091538Z-001/JavaFX/javafx-sdk-20.0.1/lib",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.598",
