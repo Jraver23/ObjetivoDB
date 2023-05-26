@@ -10,31 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/view/VentanaCrearPedido.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/VentanaCrearPedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/VentanaEliminarPedido.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/VentanaEliminarPedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/VentanaMostrarPedidos.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/VentanaMostrarPedidos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaAñadirArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaAñadirArticulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaMenuArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMenuArticulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarArticulo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controlador/Controlador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/Articulo_DAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/Cliente_DAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/ConexionBD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/Pedido_DAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Articulo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Cliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ClienteEstandar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ClientePremium.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Datos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/HibernateUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Lista.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ListaArticulos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ListaClientes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ListaPedidos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Pedidos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/modelTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GestionOS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/OnlineStore.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,17 +79,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Usuario/OneDrive/Escritorio/POO con BBDD/Producto 5/Bonus/Producto 5_Lau/Hibernaters-main",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.598",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/enord/Desktop/JavaFX-20230525T091538Z-001/JavaFX/javafx-sdk-20.0.1/lib&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.598&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="view" />
