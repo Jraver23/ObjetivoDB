@@ -1,5 +1,10 @@
 package controlador;
 
+import dao.Articulo_DAO;
+import dao.Pedido_DAO;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import model.*;
 
 import java.sql.Time;
@@ -7,6 +12,7 @@ import java.util.Date;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.List;
 
 public class Controlador {
 
@@ -52,26 +58,25 @@ public class Controlador {
     }
 
 
-
     // Adición de datos a las listas
-    public boolean addArticuloToList (String codigo, String descripcion, float precio, float gastos, long tiempo) {
-        if (datos.existeArticulo(codigo) == true){
+    public boolean addArticuloToList(String codigo, String descripcion, float precio, float gastos, long tiempo) {
+        if (datos.existeArticulo(codigo) == true) {
             return false;
         }
         datos.addArticulo(codigo, descripcion, precio, gastos, tiempo);
         return true;
     }
 
-    public boolean addClienteToAList (String nombre, String domicilio, String nif, String email, String tipoCliente) {
-        if (datos.existeCliente(email) == true){
+    public boolean addClienteToAList(String nombre, String domicilio, String nif, String email, String tipoCliente) {
+        if (datos.existeCliente(email) == true) {
             return false;
         }
         datos.addClienteToAList(nombre, domicilio, nif, email, tipoCliente);
         return true;
     }
 
-    public boolean deletePedidoFromLista (int numPedido) {
-        if (datos.eliminarP(numPedido)==true){
+    public boolean deletePedidoFromLista(int numPedido) {
+        if (datos.eliminarP(numPedido) == true) {
             return true;
         }
         System.out.println("El pedido no existe.");
@@ -79,14 +84,33 @@ public class Controlador {
     }
 
     public boolean addPedido(int numero_pedido, String email, String articulo, int numero_de_articulos, LocalDateTime fecha) {
-        if (datos.existeCliente(email) == true){
+        if (datos.existeCliente(email) == true) {
             datos.addPedidos(numero_pedido, email, articulo, numero_de_articulos, fecha);
             return true;
         }
         return false;
     }
 
-    public boolean existeCliente (String email){
+    public boolean existeCliente(String email) {
         return datos.existeCliente(email);
     }
+
+    public Cliente seleccionarClientePorEmail(String email) {
+        for (Cliente cliente : getListaClientes()) {
+            if (cliente.getEmail().equals(email)) {
+                return cliente; // Retorna el cliente si se encuentra el email
+            }
+        }
+        return null; // Retorna null si no se encuentra el cliente con el email
+    }
+
+    public Articulo seleccionarArticuloPorNumero(String numeroArticulo) {
+        for (Articulo articulo : getListaArticulos()) {
+            if (articulo.getCodigoA().equals(numeroArticulo)) {
+                return articulo; // Retorna el artículo si se encuentra el número de artículo
+            }
+        }
+        return null; // Retorna null si no se encuentra el artículo con el número de artículo
+    }
+
 }
