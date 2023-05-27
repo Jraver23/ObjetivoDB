@@ -11,10 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/Controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/Articulo_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Articulo_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/Pedido_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/Pedido_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaCrearPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaCrearPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaCrearPedido.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaCrearPedido.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaEliminarPedido.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaEliminarPedido.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaEliminarPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaEliminarPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarPedidos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMostrarPedidos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarPedidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMostrarPedidos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
