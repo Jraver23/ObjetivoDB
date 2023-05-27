@@ -10,13 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaMenuArticulo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMenuArticulo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaMenuArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMenuArticulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarArticulos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMostrarArticulos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ObjetivoDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ObjetivoDB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ConexionBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ConexionBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaCrearPedido.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaCrearPedido.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMostrarCliente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMostrarCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaPrincipal.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaMenuArticulo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaMenuArticulo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/ConexionBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ConexionBD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaCrearPedido.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaCrearPedido.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaMostrarCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaMostrarCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaMostrarCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaMostrarCliente.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaPrincipal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

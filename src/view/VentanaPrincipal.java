@@ -28,8 +28,6 @@ public class VentanaPrincipal implements Initializable {
         // TODO
     }
 
-
-
     @FXML
     private void CrearCliente (ActionEvent event){
         Node node = (Node) event.getSource();

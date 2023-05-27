@@ -25,6 +25,7 @@
         <TextField fx:id="clienteEst" layoutX="128.0" layoutY="268.0" prefHeight="27.0" prefWidth="249.0" />
         <TextField fx:id="articuloEst" layoutX="128.0" layoutY="309.0" prefHeight="27.0" prefWidth="249.0" />
         <TextField fx:id="cantidadEst" layoutX="128.0" layoutY="353.0" prefHeight="27.0" prefWidth="249.0" />
+        <TextField fx:id="numPedido" layoutX="320.0" layoutY="191.0" prefHeight="27.0" prefWidth="249.0" />
         <Button fx:id="crearPedPrem" layoutX="116.0" layoutY="191.0" mnemonicParsing="false" onAction="#crearPedPrem" text="Crear pedido PREMIUM" />
         <Button fx:id="crearPedEst" layoutX="112.0" layoutY="395.0" mnemonicParsing="false" onAction="#crearPedEst" text="Crear pedido ESTANDAR" />
         <Button fx:id="salir" layoutX="163.0" layoutY="443.0" mnemonicParsing="false" onAction="#clicSalir" text="Salir" />
