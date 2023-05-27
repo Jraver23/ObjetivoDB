@@ -94,23 +94,4 @@ public class Controlador {
     public boolean existeCliente(String email) {
         return datos.existeCliente(email);
     }
-
-    public Cliente seleccionarClientePorEmail(String email) {
-        for (Cliente cliente : getListaClientes()) {
-            if (cliente.getEmail().equals(email)) {
-                return cliente; // Retorna el cliente si se encuentra el email
-            }
-        }
-        return null; // Retorna null si no se encuentra el cliente con el email
-    }
-
-    public Articulo seleccionarArticuloPorNumero(String numeroArticulo) {
-        for (Articulo articulo : getListaArticulos()) {
-            if (articulo.getCodigoA().equals(numeroArticulo)) {
-                return articulo; // Retorna el artículo si se encuentra el número de artículo
-            }
-        }
-        return null; // Retorna null si no se encuentra el artículo con el número de artículo
-    }
-
 }

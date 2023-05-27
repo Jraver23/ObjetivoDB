@@ -10,12 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/openjfx_javafx_controls.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/openjfx_javafx_fxml.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaCrearPedido.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaCrearPedido.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaEliminarPedido.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaEliminarPedido.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaEliminarPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaEliminarPedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarPedidos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMostrarPedidos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarPedidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMostrarPedidos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ObjetivoDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ObjetivoDB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/OnlineStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/OnlineStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaAñadirArticulo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaAñadirArticulo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaMenuArticulo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaMenuArticulo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarArticulos.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarArticulos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaAñadirArticulo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaMenuArticulo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaMostrarArticulos.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +58,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/view/VentanaMostrarArticulos.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
@@ -78,17 +86,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/enord/Desktop/JavaFX-20230525T091538Z-001/JavaFX/javafx-sdk-20.0.1/lib&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.598&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Program Files/Java/javafx-sdk-20.0.1/lib",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.598",
+    "settings.editor.selected.configurable": "preferences.pathVariables"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="view" />
@@ -110,6 +123,7 @@
       <option name="MAIN_CLASS_NAME" value="view.OnlineStore" />
       <module name="ObjetivoDB" />
       <option name="PROGRAM_PARAMETERS" value="--module-path /$PROJECT_DIR$/../../../../../../JavaFX/javafx-sdk-20.0.1/lib --add module javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.fxml,javafx.controls,javafx.graphics" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="view.*" />
@@ -222,5 +236,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
