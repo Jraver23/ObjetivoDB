@@ -32,8 +32,6 @@ public class VentanaPrincipal implements Initializable {
 
     @FXML
     private void CrearCliente (ActionEvent event){
-
-
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
@@ -106,7 +104,6 @@ public class VentanaPrincipal implements Initializable {
 
     @FXML
     private void MostrarPedido (ActionEvent event){
-
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();

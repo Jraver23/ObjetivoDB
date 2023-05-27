@@ -4,13 +4,16 @@ import controlador.Controlador;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Articulo;
@@ -22,54 +25,37 @@ import java.util.ResourceBundle;
 
     //public class VentanaMostrarArticulos {
 
-    public class VentanaMostrarArticulos extends Application implements Initializable  {
-        private Controlador controlador = new Controlador();
-
+    public class VentanaMostrarArticulos implements Initializable  {
         @FXML
-        private TableView<Articulo> tablaArticulos;
-
-        @FXML
-        private TableColumn<Articulo, String> codigo;
-
-        @FXML
-        private TableColumn<Articulo, String> descripcion;
-
-        @FXML
-        private TableColumn<Articulo, Float> precio_venta;
-
-        @FXML
-        private TableColumn<Articulo, Float> gastos_envio;
-
-        @FXML
-        private TableColumn<Articulo, Long> tiempo_preparacion;
-
-        public static void main(String[] args) {
-            launch(args);
-        }
+        private TextArea listaArticulos;
+        private Button salir;
 
         @Override
-        public void start(Stage primaryStage) throws IOException {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/VentanaMostrarArticulos.fxml"));
-            primaryStage.setTitle("Mostrar Artículos");
-            primaryStage.setScene(new Scene(root, 570, 400));
-            primaryStage.show();
+        public void initialize(URL url, ResourceBundle rb) {
+            // TODO
+            Controlador controlador = new Controlador();
+            String articulos = controlador.getListaArticulos();
+
+
+            listaArticulos.setText(articulos);
         }
 
-        @Override
-        public void initialize(URL url, ResourceBundle resourceBundle) {
-            codigo.setCellValueFactory(new PropertyValueFactory<Articulo, String>("codigo"));
-            descripcion.setCellValueFactory(new PropertyValueFactory<Articulo, String>("descripcion"));
-            precio_venta.setCellValueFactory(new PropertyValueFactory<Articulo, Float>("precio_venta"));
-            gastos_envio.setCellValueFactory(new PropertyValueFactory<Articulo, Float>("gastos_envio"));
-            tiempo_preparacion.setCellValueFactory(new PropertyValueFactory<Articulo, Long>("tiempo_preparacion"));
-            ArrayList<Articulo> listArt = controlador.listaA();
-            ObservableList<Articulo> listaArticulos = FXCollections.observableArrayList();
-            for (Articulo art:listArt){
-                listaArticulos.add(new Articulo(art.getCodigoA(), art.getDescripcionA(), art.getPrecio_de_venta(), art.getGastos_de_envio(), art.getTiempo_de_preparacion()));
+        private void Salir (ActionEvent event){
+            Stage stage = (Stage) this.salir.getScene().getWindow();
+            stage.close();
+            try {
+                VentanaPrincipal v = new VentanaPrincipal();
+                Parent root = FXMLLoader.load(v.getClass().getResource("VentanaPrincipal.fxml"));
+
+                Scene scene = new Scene(root);
+                stage.setTitle("ObjetivoDB - Menu Principal");
+                stage.setScene(scene);
+                stage.show();
+            } catch ( IOException e) {
+                System.err.println(String.format("Error al crear la ventana: %s", e.getMessage()));
             }
-            tablaArticulos.setItems(listaArticulos);
-
         }
+
     }
 
 

@@ -9,6 +9,6 @@
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="view.VentanaMenuArticulo" prefHeight="400.0" prefWidth="600.0">
     <children>
         <Button layoutX="248.0" layoutY="130.0" mnemonicParsing="false" onAction="#addArt" text="Agregar artículo" />
-        <Button layoutX="247.0" layoutY="200.0" mnemonicParsing="false" onAction="#mostrarArts" text="Mostrar artículos" />
+        <Button layoutX="247.0" layoutY="200.0" mnemonicParsing="false" onAction="#mostrarArt" text="Mostrar artículos" />
     </children>
 </AnchorPane>
