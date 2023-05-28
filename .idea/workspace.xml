@@ -11,15 +11,15 @@
   <component name="ChangeListManager">
     <list default="true" id="6333bd93-bb9a-4c16-92b6-65bdef07436c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaCrearCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaCrearCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaMostrarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaMostrarCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaAñadirArticulo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaAñadirArticulo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaAñadirArticulo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaAñadirArticulo.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaCrearCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaCrearCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaMostrarArticulos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaMostrarArticulos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaCrearPedido.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaCrearPedido.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaEliminarPedido.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaEliminarPedido.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaMenuArticulo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaMenuArticulo.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaMostrarArticulos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaMostrarArticulos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaMostrarCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaMostrarCliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaMostrarCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaMostrarCliente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaMostrarPedidos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaMostrarPedidos.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/VentanaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/VentanaPrincipal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

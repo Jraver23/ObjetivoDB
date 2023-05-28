@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.VentanaMostrarPedidos"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="641.0" prefWidth="600.0" style="-fx-background-color: #87CEEB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.VentanaMostrarPedidos">
     <children>
         <TextArea fx:id="pedPendientesPrem" layoutX="34.0" layoutY="58.0" prefHeight="100.0" prefWidth="549.0" />
         <TextArea fx:id="pedPendientesEst" layoutX="34.0" layoutY="170.0" prefHeight="100.0" prefWidth="549.0" />
-        <TextArea fx:id="pedEnviadosPrem" layoutX="34.0" layoutY="280.0" prefHeight="100.0" prefWidth="549.0" />
-        <TextArea fx:id="pedEnviadosEst" layoutX="34.0" layoutY="390.0" prefHeight="100.0" prefWidth="549.0" />
+        <TextArea fx:id="pedEnviadosPrem" layoutX="34.0" layoutY="368.0" prefHeight="100.0" prefWidth="549.0" />
+        <TextArea fx:id="pedEnviadosEst" layoutX="34.0" layoutY="479.0" prefHeight="100.0" prefWidth="549.0" />
         <Label layoutX="34.0" layoutY="26.0" text="Pedidos Enviados:" />
         <Label layoutX="34.0" layoutY="341.0" text="Pedidos Pendientes:" />
-        <Button fx:id="salir" layoutX="281.0" layoutY="650.0" mnemonicParsing="false" onAction="#Salir" text="Salir" />
+        <Button fx:id="salir" layoutX="280.0" layoutY="599.0" mnemonicParsing="false" onAction="#Salir" text="Salir" />
     </children>
 
 </AnchorPane>
