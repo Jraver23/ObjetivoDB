@@ -20,7 +20,7 @@ public class VentanaMostrarCliente implements Initializable {
     @FXML
     private TextArea ClientesP, ClientesE;
     @FXML
-    private Button Salir;
+    private Button salir;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -32,19 +32,19 @@ public class VentanaMostrarCliente implements Initializable {
         ClientesE.setText(ClientesEstandar);
     }
     @FXML
-    private void Salir (javafx.event.ActionEvent event) throws IOException {
-        Stage stage = (Stage) this.Salir.getScene().getWindow();
+    private void Salir (ActionEvent event){
+        Stage stage = (Stage) this.salir.getScene().getWindow();
         stage.close();
         try {
             VentanaPrincipal v = new VentanaPrincipal();
             Parent root = FXMLLoader.load(v.getClass().getResource("VentanaPrincipal.fxml"));
 
             Scene scene = new Scene(root);
-            stage.setTitle("ObjetivoDB");
+            stage.setTitle("ObjetivoDB - Menu Principal");
             stage.setScene(scene);
             stage.show();
         } catch ( IOException e) {
-            System.err.println(String.format("Error creando ventana: %s", e.getMessage()));
+            System.err.println(String.format("Error al crear la ventana: %s", e.getMessage()));
         }
     }
 }

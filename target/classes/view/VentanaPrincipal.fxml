@@ -58,7 +58,7 @@
             <Label layoutX="275.0" layoutY="93.0" text="Gestion Articulos" />
             <Label layoutX="461.0" layoutY="93.0" text="Gestion pedidos" />
             <Button fx:id="CrearArticulo" layoutX="276.0" layoutY="141.0" mnemonicParsing="false" text="Crear Articulo" onAction="#CrearArticulo"/>
-            <Button fx:id="MostrarArticulos" layoutX="267.0" layoutY="201.0" mnemonicParsing="false" text="Mostrar Articulos" />
+            <Button fx:id="MostrarArticulos" layoutX="267.0" layoutY="201.0" mnemonicParsing="false" text="Mostrar Articulos" onAction="#MostrarArticulos"/>
             <Button fx:id="Salir" layoutX="294.0" layoutY="303.0" mnemonicParsing="false" text="Salir" onAction="#Salir"/>
             <Button fx:id="CrearPedido" layoutX="463.0" layoutY="141.0" mnemonicParsing="false" text="Crear Pedido" onAction="#CrearPedido" />
             <Button fx:id="EliminarPedido" layoutX="455.0" layoutY="201.0" mnemonicParsing="false" text="Eliminar Pedido" onAction="#EliminarPedido" />
