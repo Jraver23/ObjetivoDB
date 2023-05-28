@@ -117,6 +117,22 @@ public class VentanaPrincipal implements Initializable {
         }
     }
 
+    @FXML
+    private void CrearArticulo (ActionEvent event){
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+        try {
+            VentanaAñadirArticulo v = new VentanaAñadirArticulo();
+            Parent root = FXMLLoader.load(v.getClass().getResource("VentanaAñadirArticulo.fxml"));
+            Scene scene = new Scene(root);
+            stage.setTitle("ObjetivoDB - Añadir articulo");
+            stage.setScene(scene);
+            stage.show();
+        } catch ( IOException e) {
+            System.err.println(String.format("Error al crear la ventana: %s", e.getMessage()));
+        }
+    }
 
     @FXML
     private void Salir (ActionEvent event){

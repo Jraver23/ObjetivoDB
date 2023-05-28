@@ -18,7 +18,8 @@
         <TextField fx:id="precio_venta" layoutX="313.0" layoutY="178.0" />
         <TextField fx:id="gastos_envio" layoutX="313.0" layoutY="216.0" />
         <TextField fx:id="tiempo_preparacion" layoutX="313.0" layoutY="256.0" />
-        <Button layoutX="462.0" layoutY="328.0" mnemonicParsing="false" onAction="#agregarArtBtn" text="Agregar" />
+        <Button fx:id="crearArt" layoutX="462.0" layoutY="328.0" mnemonicParsing="false" onAction="#crearArt" text="Agregar" />
+        <Button fx:id="salir" layoutX="163.0" layoutY="443.0" mnemonicParsing="false" onAction="#clicSalir" text="Salir" />
     </children>
 
 </AnchorPane>

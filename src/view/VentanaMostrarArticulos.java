@@ -28,18 +28,16 @@ import java.util.ResourceBundle;
     public class VentanaMostrarArticulos implements Initializable  {
         @FXML
         private TextArea listaArticulos;
+        @FXML
         private Button salir;
 
         @Override
         public void initialize(URL url, ResourceBundle rb) {
-            // TODO
             Controlador controlador = new Controlador();
             String articulos = controlador.getListaArticulos();
-
-
             listaArticulos.setText(articulos);
         }
-
+        @FXML
         private void Salir (ActionEvent event){
             Stage stage = (Stage) this.salir.getScene().getWindow();
             stage.close();

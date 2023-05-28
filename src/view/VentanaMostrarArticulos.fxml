@@ -8,15 +8,8 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="view.VentanaMostrarArticulos" prefHeight="400.0" prefWidth="600.0">
     <children>
-        <TableView fx:id="tablaArticulos" layoutX="8.0" layoutY="6.0" prefHeight="350.0" prefWidth="550.0">
-            <columns>
-                <TableColumn fx:id="codigo" prefWidth="100.0" text="Codigo" />
-                <TableColumn fx:id="descripcion" prefWidth="100.0" text="Descripcion" />
-                <TableColumn fx:id="precio_venta" text="Precio Venta" />
-                <TableColumn fx:id="gastos_envio" prefWidth="100.0" text="Gastos Envio" />
-                <TableColumn fx:id="tiempo_preparacion" prefWidth="130.0" text="Tiempo preparacion" />
-            </columns>
-        </TableView>
+                <TextArea fx:id="listaArticulos" layoutX="34.0" layoutY="170.0" prefHeight="100.0" prefWidth="549.0" />
+                <Button fx:id="salir" layoutX="281.0" layoutY="650.0" mnemonicParsing="false" onAction="#Salir" text="Salir" />
     </children>
 
 </AnchorPane>
