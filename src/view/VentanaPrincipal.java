@@ -28,54 +28,14 @@ public class VentanaPrincipal implements Initializable {
         // TODO
     }
 
-
-
-    @FXML
-    private void CrearArticulos (ActionEvent event){
-
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-        try {
-            VentanaArticulos v = new VentanaArticulos();
-            Parent root = FXMLLoader.load(v.getClass().getResource("VentanaArticulos.fxml"));
-
-            Scene scene = new Scene(root);
-            stage.setTitle("ObjetivoDB - Crear Articulo");
-            stage.setScene(scene);
-            stage.show();
-        } catch ( IOException e) {
-            System.err.println(String.format("Error al crear la ventana: %s", e.getMessage()));
-        }
-    }
-    @FXML
-    private void MostrarArticulos (ActionEvent event){
-
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-        try {
-            VentanaMostrarArticulos v = new VentanaMostrarArticulos();
-            Parent root = FXMLLoader.load(v.getClass().getResource("VentanaMostrarArticulos.fxml"));
-
-            Scene scene = new Scene(root);
-            stage.setTitle("ObjetivoDB - Mostrar articulos");
-            stage.setScene(scene);
-            stage.show();
-        } catch ( IOException e) {
-            System.err.println(String.format("Error al crear la ventana: %s", e.getMessage()));
-        }
-    }
     @FXML
     private void CrearCliente (ActionEvent event){
-
-
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
         try {
-            VentanaCliente v = new VentanaCliente();
-            Parent root = FXMLLoader.load(v.getClass().getResource("VentanaCliente.fxml"));
+            VentanaCrearCliente v = new VentanaCrearCliente();
+            Parent root = FXMLLoader.load(v.getClass().getResource("VentanaCrearCliente.fxml"));
 
             Scene scene = new Scene(root);
             stage.setTitle("ObjetivoDB - Crear cliente");
@@ -92,8 +52,8 @@ public class VentanaPrincipal implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
         try {
-            VentanaMostrarClientes v = new VentanaMostrarClientes();
-            Parent root = FXMLLoader.load(v.getClass().getResource("VentanaMostrarClientes.fxml"));
+            VentanaMostrarCliente v = new VentanaMostrarCliente();
+            Parent root = FXMLLoader.load(v.getClass().getResource("VentanaMostrarCliente.fxml"));
 
             Scene scene = new Scene(root);
             stage.setTitle("ObjetivoDB - Mostrar clientes");
@@ -142,7 +102,6 @@ public class VentanaPrincipal implements Initializable {
 
     @FXML
     private void MostrarPedido (ActionEvent event){
-
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
@@ -158,6 +117,39 @@ public class VentanaPrincipal implements Initializable {
         }
     }
 
+    @FXML
+    private void CrearArticulo (ActionEvent event){
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+        try {
+            VentanaAñadirArticulo v = new VentanaAñadirArticulo();
+            Parent root = FXMLLoader.load(v.getClass().getResource("VentanaAñadirArticulo.fxml"));
+            Scene scene = new Scene(root);
+            stage.setTitle("ObjetivoDB - Añadir articulo");
+            stage.setScene(scene);
+            stage.show();
+        } catch ( IOException e) {
+            System.err.println(String.format("Error al crear la ventana: %s", e.getMessage()));
+        }
+    }
+
+    @FXML
+    private void MostrarArticulos (ActionEvent event){
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+        try {
+            VentanaMostrarArticulos v = new VentanaMostrarArticulos();
+            Parent root = FXMLLoader.load(v.getClass().getResource("VentanaMostrarArticulos.fxml"));
+            Scene scene = new Scene(root);
+            stage.setTitle("ObjetivoDB - Mostrar articulos");
+            stage.setScene(scene);
+            stage.show();
+        } catch ( IOException e) {
+            System.err.println(String.format("Error al crear la ventana: %s", e.getMessage()));
+        }
+    }
 
     @FXML
     private void Salir (ActionEvent event){

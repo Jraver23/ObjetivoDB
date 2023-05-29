@@ -9,9 +9,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import model.Articulo;
+import model.Cliente;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -19,25 +22,23 @@ import java.util.ResourceBundle;
 public class VentanaCrearPedido implements  Initializable{
 
     @FXML
-    private TextField cantidadPrem, cantidadEst;
+    private TextField cantidadPrem, cantidadEst, clientePrem, clienteEst, articuloPrem, articuloEst, numPedido;
     @FXML
     private Button crearPedPrem, crearPedEst, salir;
-    @FXML
-    private ComboBox boxClientePrem,boxArticuloPrem, boxClienteEst, boxArticuloEst;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        Controlador cont = new Controlador();
-        cont.AgregarClientesPremiumComboBox(boxClientePrem);
-        cont.AgregarClientesEstandarComboBox(boxClienteEst);
-        cont.AgregarArticulosComboBox(boxArticuloPrem);
-        cont.AgregarArticulosComboBox(boxArticuloEst);
     }
     @FXML
     private void crearPedEst (javafx.event.ActionEvent event){
         Controlador cont = new Controlador();
-        cont.CrearPedidosE(boxClienteEst, boxArticuloEst, cantidadEst);
+        int num_pedido = Integer.parseInt(numPedido.getText());
+        String email = clienteEst.getText();
+        String articulo = articuloEst.getText();
+        int numero_de_articulos= Integer.parseInt(cantidadEst.getText());
+        LocalDateTime fecha = LocalDateTime.now();
+        cont.addPedido(num_pedido, email, articulo, numero_de_articulos, fecha);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);
         alert.setTitle("Info");
@@ -47,7 +48,12 @@ public class VentanaCrearPedido implements  Initializable{
     @FXML
     private void crearPedPrem (javafx.event.ActionEvent event){
         Controlador cont = new Controlador();
-        cont.CrearPedidosP(boxClientePrem,boxArticuloPrem,cantidadPrem);
+        int num_pedido = Integer.parseInt(numPedido.getText());
+        String email = clientePrem.getText();
+        String articulo = articuloPrem.getText();
+        int numero_de_articulos= Integer.parseInt(cantidadPrem.getText());
+        LocalDateTime fecha = LocalDateTime.now();
+        cont.addPedido(num_pedido, email, articulo, numero_de_articulos, fecha);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);
         alert.setTitle("Info");

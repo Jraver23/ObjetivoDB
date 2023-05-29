@@ -20,22 +20,20 @@ public class VentanaMostrarCliente implements Initializable {
     @FXML
     private TextArea ClientesP, ClientesE;
     @FXML
-    private Button Salir;
+    private Button salir;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         Controlador controlador = new Controlador();
         String ClientesPremium = controlador.getListaClientesPremium();
         String ClientesEstandar = controlador.getListaClientesStandard();
 
         ClientesP.setText(ClientesPremium);
-
         ClientesE.setText(ClientesEstandar);
     }
     @FXML
     private void Salir (ActionEvent event){
-        Stage stage = (Stage) this.Salir.getScene().getWindow();
+        Stage stage = (Stage) this.salir.getScene().getWindow();
         stage.close();
         try {
             VentanaPrincipal v = new VentanaPrincipal();

@@ -19,14 +19,12 @@ import java.util.ResourceBundle;
 public class VentanaEliminarPedido implements Initializable {
 
     @FXML
-    private ComboBox boxPedidos;
+    private TextField textPedidos;
     @FXML
     private Button eliminar, salir;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        Controlador cont = new Controlador();
-        cont.AgregarPedidosComboBox(boxPedidos);
     }
     @FXML
     private void clicEliminar(ActionEvent event){
@@ -37,7 +35,8 @@ public class VentanaEliminarPedido implements Initializable {
         alert.setContentText("¿Esta seguro/a que desea eliminar este pedido?");
         Optional<ButtonType> action = alert.showAndWait();
         if(action.get()==ButtonType.OK){
-            cont.eliminarPedidos(boxPedidos);
+            int num_pedido = Integer.parseInt(textPedidos.getText());
+            cont.deletePedidoFromLista(num_pedido);
         }
     }
     @FXML

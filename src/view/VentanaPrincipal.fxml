@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.VentanaPrincipal">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -51,24 +51,24 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #87CEEB;" VBox.vgrow="ALWAYS">
       <children>
         <Label alignment="CENTER" layoutX="212.0" layoutY="31.0" style="&#10;" text="OBjetivoDB-Menu Principal" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
           <font>
             <Font size="18.0" />
           </font>
         </Label>
-            <Button id="CrearCliente" layoutX="77.0" layoutY="141.0" mnemonicParsing="false" text="Crear Cliente" />
-            <Button id="MostrarClientes" layoutX="68.0" layoutY="188.0" mnemonicParsing="false" text="Mostrar Clientes" />
+            <Button fx:id="CrearCliente" layoutX="77.0" layoutY="141.0" mnemonicParsing="false" onAction="#CrearCliente" text="Crear Cliente" />
+            <Button fx:id="MostrarClientes" layoutX="68.0" layoutY="188.0" mnemonicParsing="false" onAction="#MostrarClientes" text="Mostrar Clientes" />
             <Label layoutX="77.0" layoutY="93.0" text="Gestion Clientes" />
             <Label layoutX="275.0" layoutY="93.0" text="Gestion Articulos" />
             <Label layoutX="461.0" layoutY="93.0" text="Gestion pedidos" />
-            <Button id="CrearArticulo" layoutX="276.0" layoutY="141.0" mnemonicParsing="false" text="Crear Articulo" />
-            <Button id="MostrarArticulos" layoutX="267.0" layoutY="201.0" mnemonicParsing="false" text="Mostrar Articulos" />
-            <Button id="Salir" layoutX="294.0" layoutY="303.0" mnemonicParsing="false" text="Salir" />
-            <Button id="CrearPedido" layoutX="463.0" layoutY="141.0" mnemonicParsing="false" text="Crear Pedido" />
-            <Button id="EliminarPedido" layoutX="455.0" layoutY="201.0" mnemonicParsing="false" text="Eliminar Pedido" />
-            <Button id="MostrarPedidos" layoutX="454.0" layoutY="252.0" mnemonicParsing="false" text="Mostrar Pedidos" />
+            <Button fx:id="CrearArticulo" layoutX="276.0" layoutY="141.0" mnemonicParsing="false" onAction="#CrearArticulo" text="Crear Articulo" />
+            <Button fx:id="MostrarArticulos" layoutX="267.0" layoutY="201.0" mnemonicParsing="false" onAction="#MostrarArticulos" text="Mostrar Articulos" />
+            <Button fx:id="Salir" layoutX="294.0" layoutY="303.0" mnemonicParsing="false" onAction="#Salir" text="Salir" />
+            <Button fx:id="CrearPedido" layoutX="463.0" layoutY="141.0" mnemonicParsing="false" onAction="#CrearPedido" text="Crear Pedido" />
+            <Button fx:id="EliminarPedido" layoutX="455.0" layoutY="201.0" mnemonicParsing="false" onAction="#EliminarPedido" text="Eliminar Pedido" />
+            <Button fx:id="MostrarPedidos" layoutX="454.0" layoutY="252.0" mnemonicParsing="false" onAction="#MostrarPedido" text="Mostrar Pedidos" />
       </children>
     </AnchorPane>
   </children>

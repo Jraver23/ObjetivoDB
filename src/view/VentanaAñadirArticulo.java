@@ -11,41 +11,35 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.fxml.Initializable;
 
 
 
-public class VentanaAñadirArticulo extends Application{
+public class VentanaAñadirArticulo implements Initializable {
 
         private Controlador controlador = new Controlador();
         @FXML
         private TextField codigo;
-
         @FXML
         private TextField descripcion;
-
         @FXML
         private TextField precio_venta;
-
         @FXML
         private TextField gastos_envio;
-
         @FXML
         private TextField tiempo_preparacion;
 
-        public static void main(String[] args) {
-            launch(args);
-        }
+        @FXML
+        private Button crearArt, salir;
 
         @Override
-        public void start(Stage primaryStage) throws IOException {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/VentanaAñadirArticulo.fxml"));
-            primaryStage.setTitle("Añadir Artículo");
-            primaryStage.setScene(new Scene(root, 570, 400));
-            primaryStage.show();
+        public void initialize(URL url, ResourceBundle rb) {
         }
 
-        public void agregarArtBtn(ActionEvent actionEvent) {
+        public void crearArt(ActionEvent actionEvent) {
             String cod = codigo.getText();
             String desc = descripcion.getText();
             Float prec_vent = Float.parseFloat(precio_venta.getText());
@@ -66,6 +60,23 @@ public class VentanaAñadirArticulo extends Application{
                 System.out.println("El articulo ya existe");
             }
         }
+        @FXML
+        private void clicSalir (javafx.event.ActionEvent event){
+            Stage stage = (Stage) this.salir.getScene().getWindow();
+            stage.close();
+            try {
+                VentanaPrincipal v = new VentanaPrincipal();
+                Parent root = FXMLLoader.load(v.getClass().getResource("VentanaPrincipal.fxml"));
+
+                Scene scene = new Scene(root);
+                stage.setTitle("ObjetivoDB");
+                stage.setScene(scene);
+                stage.show();
+            } catch ( IOException e) {
+                System.err.println(String.format("Error creando ventana: %s", e.getMessage()));
+            }
+        }
+
     }
 
 

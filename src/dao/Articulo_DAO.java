@@ -24,6 +24,10 @@ public class Articulo_DAO implements DAO<Articulo, String> {
             //e.printStackTrace();
         }
 
+    public Articulo_DAO() {
+
+    }
+
 
     public PreparedStatement getStatement(String query) {
         try {

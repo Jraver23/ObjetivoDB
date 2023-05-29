@@ -24,6 +24,9 @@ public class Pedido_DAO implements DAO<Pedidos, Integer>{
             e.printStackTrace();
         } //catch (ClassNotFoundException e) {
             //e.printStackTrace();
+    }
+
+    public Pedido_DAO() {
 
     }
 
